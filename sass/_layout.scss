@@ -1,0 +1,1094 @@
+//----------------------------------------------------//
+// LAYOUT                                             //
+//----------------------------------------------------//
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+body {
+	height: 100%;
+	min-width: 320px;
+	background: $white1;
+	@include b(tablet) {
+		background: $white;
+	}
+}
+
+.container {
+	padding: 0 60px;
+	max-width: 1420px;
+	margin: 0 auto; 
+	@include clearfix;
+	@include b(tablet) {
+		padding: 0 30px;
+	}
+}
+
+$footerHeight: 242px; 
+ 
+.wrapper {
+	position: relative;
+	overflow: hidden;
+	min-height: 100%;
+}
+
+.content {
+	position: relative;
+	//z-index: 10;
+}
+//----------------------------------------------------//
+// HEADER                                             //
+//----------------------------------------------------//
+.header {
+
+	&--noBottom {
+		.header__bottom {
+			display: none;
+		}
+	}
+	
+	&__top {
+		padding: 0 20px;
+		background: $red1;
+		@include clearfix;
+		position: relative;
+		font-size: 0;
+		z-index: 100;
+		@include b(tablet) {
+			padding: 0 15px;
+		}
+		&-left {
+			float: left;
+			display: table;
+			line-height: 1;
+			& > * {
+				display: table-cell;
+				vertical-align: middle;
+				height: 50px;
+			}
+		}
+		&-right {
+			float: right;
+			display: table;
+			line-height: 1;
+			& > * {
+				display: table-cell;
+				vertical-align: middle;
+				height: 50px;
+			}
+		}
+	}
+
+	&__bottom {
+		@include clearfix;
+		background: $white;
+		padding: 9px 26px 7px;
+		&-left {
+			float: left;
+		}
+		&-right {
+			float: right;
+		}
+		@include b(tablet) {
+			display: none;
+		}
+	}
+
+	&-catalog {
+    padding-right: 47px;
+    border-right: 1px solid $red2;
+    position: relative;
+    width: 150px;
+    @include b(tablet) {
+    	width: 110px;
+    }
+    @include b(tablet) {
+    	width: auto;
+    	padding: 0 5px;
+    	border: 0;
+    }
+
+		&__ico {
+			display: inline-block;
+			fill: $white;
+			vertical-align: middle;
+			margin-right: 20px;
+			@include b(tablet) {
+				margin-right: 0;
+			}
+		}
+
+		&__link {
+			font: 100 12px/50px $font;
+			color: $white;
+			text-transform: uppercase;
+			border: 0;
+			text-decoration: none;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			top: -1px;
+			margin: auto;
+			@include b(tablet) {
+				position: static;
+			}
+			&-text {
+				display: inline-block;
+				vertical-align: middle;
+				@include b(tablet) {
+					display: none;
+				}
+			}
+			&:hover {
+				opacity: .6;
+			}
+		}
+
+		&__drop {
+			position: fixed;
+			top: 0;
+			bottom: 0;
+			left: -400px;
+			width: 400px;
+			background: $white;
+			padding: 17px 20px 30px;
+			z-index: 9999;
+			transition: all .3s;
+			visibility: hidden;
+			overflow: hidden;
+			&.active {
+				left: 0;
+				transition: all .3s;
+				visibility: visible;
+			}
+			@include b(tablet) {
+				width: 100%;
+				left: -100%;
+				padding-top: 0;
+			}
+		}
+
+	}
+
+	&-search {
+    width: 350px;
+    border-right: 1px solid $red2;
+    position: relative;
+    @include b(1100) {
+    	width: 250px;
+    }
+    @include b(tablet) {
+    	width: 200px;
+    }
+    @include b(tablet) {
+    	border: 0;
+    	width: auto;
+    	text-align: center;
+    	transition: all .3s;
+    	position: static;
+    	right: 70px;
+    	background: transparent;
+    	z-index: 10;
+    	&.active {
+    		
+    		.header-search__form {
+    			width: 100%;
+    			transform: scale(1);
+    		}
+    		.header-search__input {
+    			padding-left: 50px;
+    			padding-right: 25px;
+    			width: 100%;
+    		}
+    		.header-search__close {
+    			visibility: visible;
+    			opacity: 1;
+    			z-index: 0;
+    		}
+    	}
+    }
+
+    &-mob {
+	    position: absolute;
+	    cursor: pointer;
+	    display: none;
+	    transition: all .3s;
+	    padding-top: 15px;
+	    height: 50px;
+	    width: 50px;
+	    right: 65px;
+	    top: 0;
+	    @include b(tablet) {
+	    	display: block;
+	    }
+    	&__ico {
+    		fill: $white;
+    	}
+    	&:hover {
+    		opacity: .6;
+    		transition: all .3s;
+    	}
+    }
+
+    &__close {
+    	position: absolute;
+    	right: 20px;
+    	top: calc(50% - 7px);
+    	fill: $gray1;
+    	cursor: pointer;
+    	visibility: hidden;
+    	opacity: 0;
+    	z-index: -10;
+    	display: none;
+    	transition: all .3s;
+    	@include b(tablet) {
+    		display: block;
+    	}
+    }
+
+		&__form {
+			transition: all .3s;
+			@include b(tablet) {
+				position: absolute;
+				width: 100%;
+				transform: scale(0,1);
+				right: 0;
+				background: $white;
+				top: 50px;
+				overflow: hidden;
+				box-shadow: 0px 3px 13px -5px rgba(0,0,0,0.75);
+			}
+			&.is-value {
+				
+				.header-search__input {
+					border: 0;
+					background: $white;
+					&+.header-search__link {
+						fill: $gray1;
+					}
+				}
+			}
+		}
+
+		&__input {
+			transition: all .3s;
+			padding: 17px 25px 17px 50px;
+			font: 700 13px $font;
+			background: transparent;
+			border: 0;
+			color: $gray1;
+			@include placeholderColor($white);
+			&:focus {
+				border: 0;
+				&+.header-search__link {
+					fill: $gray1;
+				}
+			}
+			@include b(tablet) {
+				padding-right: 0;
+				padding-left: 0;
+				width: 0;
+				&.active {
+					border: 0;
+					&+.header-search__link {
+						fill: $gray1;
+					}
+				}
+			}
+
+		}
+		&__ico {
+			fill: inherit;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		&__link {
+			position: absolute;
+			top: calc(50% - 9px);
+			left: 20px;
+			border: 0;
+			background: none;
+			padding: 0;
+			fill: $white;
+			z-index: 2;
+		}
+
+
+	}
+
+	&-login {
+		padding: 0 43px 0;
+		@include b(tablet) {
+			padding: 0 25px;
+		}
+		@include b(tablet) {
+			display: none;
+		}
+
+		&__ico {
+			display: inline-block;
+			vertical-align: middle;
+			fill: $white;
+			margin-right: 6px;
+			position: relative;
+			top: -1px;
+		}
+
+		&__link {
+			color: $white;
+			font: 700 13px $font;
+			border: 0;
+			text-decoration: none;
+			&-text {
+				display: inline-block;
+				vertical-align: middle;
+			}
+			&:hover {
+				opacity: .6;
+			}
+		}
+
+		.modal {
+			position: absolute;
+			top: 100%;
+			right: 0;
+			z-index: 40;
+			opacity: 0;
+			transition: all .3s;
+			visibility: hidden;
+			&.active {
+				z-index: 999;
+				visibility: visible;
+				opacity: 1;
+				transition: all .3s;
+			}
+		}
+
+	}
+
+	&-basket {
+		padding: 0 8px;
+
+		&__ico {
+			display: inline-block;
+			vertical-align: baseline;
+			fill: $white;
+			margin-right: 6px;
+		}
+
+		&__link {
+			color: $white;
+			font: 700 13px $font;
+			border: 0;
+			text-decoration: none;
+			&-text {
+				display: inline-block;
+				vertical-align: baseline;
+				position: relative;
+				top: -2px;
+			}
+			&:hover {
+				opacity: .6;
+			}
+		}
+
+		.modal {
+			position: absolute;
+			top: 100%;
+			right: 0;
+			z-index: 40;
+			opacity: 0;
+			transition: all .3s;
+			visibility: hidden;
+			&.active {
+				z-index: 999;
+				visibility: visible;
+				opacity: 1;
+				transition: all .3s;
+			}
+		}
+
+	}
+
+	&__logo {
+		position: absolute;
+		left: calc(50% - 58.5px);
+		top: calc(50% - 15px);
+		@include b(desktop) {
+			position: relative;
+			left: 0;
+			top: 9px;
+			display: table;
+			margin: 0 auto;
+		}
+		@include b(tablet) {
+			position: relative;
+			left: 0;
+			top: 9px;
+			display: table;
+			margin: 0 auto;
+		}
+		@include b(tablet) {
+			top: 15px;
+			left: 11px;
+		}
+
+		&-link {
+			display: block;
+			fill: $white;
+			border: 0;
+			&:hover {
+				fill: $red3;
+			}
+		}
+
+		&-ico {
+			display: block;
+			fill: inherit;
+			@include b(tablet) {
+				width: 78px;
+				height: 20px;
+			}
+		}
+
+	}
+
+	&-place {
+		border: 0;
+		&:hover {
+			transition: all .3s;
+			.header-place__city {
+				color: $black;
+			}
+			.header-place__delivery {
+				color: $gray1;
+			}
+		}
+
+		&__ico {
+			fill: $red1;
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 14px;
+		}
+
+		&__city {
+			color: $gray1;
+			font: 400 15px $font;
+			display: inline-block;
+			margin-right: 12px;
+			transition: all .3s;
+		}
+
+		&__delivery {
+			color: $gray3;
+			font: 400 13px $font;
+			display: inline-block;
+			border-color: transparent;
+			transition: all .3s;
+		}
+
+	}
+
+	&-contacts {
+		position: relative;
+
+		&__ico {
+			fill: $red1;
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 16px;
+		}
+
+		&__phone {
+			color: $gray1;
+			font: 400 13px $font;
+			display: inline-block;
+			margin-right: 10px;
+			border: 0;
+			&:hover {
+				color: $black;
+			}
+		}
+
+		&__more {
+			color: $gray3;
+			font: 400 13px $font;
+			display: inline-block;
+			border: 0;
+			&:hover {
+				color: $gray1;
+			}
+		}
+
+
+	}
+
+	&-nav {
+		min-height: 100%;
+		position: relative;
+		@include b(tablet) {
+			padding-top: 17px;
+		}
+
+		.modal__close {
+			top: 0;
+			right: 0;
+			&-ico {
+				width: 12px;
+				height: 12px;
+			}
+			@include b(tablet) {
+				top: 17px;
+			}
+		}
+
+		&__new {
+			display: inline-block;
+			color: $white;
+			font: 900 10px/20px $font;
+			text-transform: uppercase;
+			background: $green1;
+			border-radius: 10px;
+			height: 20px;
+			width: 40px;
+			text-align: center;
+			margin-left: 10px;
+		}
+
+		&__head {
+			border-bottom: 1px solid $gray6;
+			margin: 0 -20px;
+			padding: 0 20px 16px;
+			
+			&-left {
+				display: inline-block;
+				vertical-align: middle;
+				border-right: 1px solid $gray2;
+				padding-right: 14px;
+			}
+
+			&-right {
+				display: inline-block;
+				vertical-align: middle;
+				padding-left: 11px;
+			}
+
+			&-ico {
+				fill: $red1;
+				display: inline-block;
+				vertical-align: middle;
+				margin-right: 20px;
+				@include b(tablet) {
+					display: none;
+				}
+			}
+
+			&-text {
+				display: inline-block;
+				vertical-align: middle;
+				color: $gray1;
+				font: 100 12px $font;
+				text-transform: uppercase;
+			}
+
+			&-title {
+				color: $gray1;
+				font: 400 14px $font;
+				display: block;
+			}
+
+		}
+
+		&__navigation {
+			height: 100px;
+			display: table;
+			width: 100%;
+			position: relative;
+			&:before {
+				@include before-img(calc(100% + 40px), 1px);
+				left: -20px;
+				bottom: 0;
+				background: $gray6;
+			}
+			&-link {
+				display: table-cell;
+				vertical-align: middle;
+				fill: $gray3;
+				border: 0;
+				width: 33.33%;
+				&--active {
+					fill: $red1;
+				}
+				&:hover {
+					background: $white1;
+				}
+			}
+
+			&-ico {
+				display: block;
+				fill: inherit;
+				margin: 0 auto;
+			}
+
+		}
+
+		&__list {
+			line-height: 1;
+			margin: 0 -20px;
+			position: relative;
+			padding: 16px 0 0 0;
+			visibility: hidden;
+			opacity: 0;
+			transition: right .5s;
+			position: relative;
+			height: 100%;
+			position: absolute;
+			top: 150px;
+			right: -100%;
+			&.active {
+				visibility: visible;
+				position: relative;
+				opacity: 1;
+				right: 0;
+				top: 0;
+				transition: right .5s;
+			}
+
+			&-item {
+			}
+
+			&-link {
+				border: 0;
+				color: $gray1;
+				font: 400 14px $font;
+				fill: $gray10;
+				display: block;
+				position: relative;
+				padding: 8px 20px;
+				height: 40px;
+				&:hover {
+					background: $white1;
+					fill: $red1;
+				}
+			}
+
+			&-ico {
+				fill: inherit;
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			&-text {
+				padding-left: 10px;
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			&-sub-ico {
+				position: absolute;
+				right: 20px;
+				top: calc(50% - 5px);
+				width: 6px;
+				height: 10px;
+				fill: $gray10;
+			}
+
+		}
+
+		&-submenu {
+			position: absolute;
+			top: 0;
+			right: -100%;
+			width: 100%;
+			bottom: 0;
+			background: $white;
+			z-index: 10;
+			visibility: hidden;
+			transition: all .3s;
+			&.active {
+				visibility: visible;
+				right: 0;
+				transition: all .3s;
+			}
+			&__box {
+				overflow: hidden;
+				overflow-y: auto;
+				height: 100%;
+
+			}
+			&__top {
+				padding: 19px 28px 13px;
+			}
+			&__ico {
+				fill: $gray10;
+				display: inline-block;
+				vertical-align: middle;
+			}
+			&__title {
+				display: inline-block;
+				vertical-align: middle;
+				color: $gray1;
+				font: 400 14px  $font;
+				padding-left: 20px;
+			}
+			&__back {
+				padding: 13px 20px;
+				border-bottom: 1px solid $gray6;
+				@include clearfix;
+				&-link {
+					float: left;
+					border: 0;
+					&:hover {
+						opacity: .6;
+					}
+				}
+				&-ico {
+					width: 6px;
+					height: 10px;
+					fill: $gray10;
+					display: inline-block;
+					vertical-align: middle;
+				}
+				&-text {
+					display: inline-block;
+					vertical-align: middle;
+					color: $gray1;
+					font: 400 13px/1 $font;
+					padding-left: 15px;
+				}
+			}
+			&__all-items {
+				color: #434a54;
+    		font: 400 13px/1 "Lato";
+    		float: right;
+    		border: 0;
+    		&:hover {
+    			opacity: .6;
+    		}
+			}
+			&__list {
+				padding: 3px 41px 0;
+				&-item {
+					
+				}
+				&-link {
+					color: $gray1;
+					font: 400 13px/30px $font;
+					display: block;
+					border: 0;
+					margin: 0 -41px;
+					padding: 0 41px;
+					height: 30px;
+					&:hover {
+						background: $white1;
+					}
+					&.active {
+						background: $white1;
+					}
+				}
+			}
+		}
+
+		&-submenu2 {
+			display: none;
+
+			&__row {
+				position: relative;
+				margin: 0 -41px;
+    		padding: 11px 40px 9px;
+				&:before {
+					@include before-img(calc(100% - 100px),1px);
+					bottom: 0;
+					background: $gray6;
+					left: 70px;
+				}
+				&:first-child {
+					padding-top: 0;
+				}
+				&:last-child {
+					padding-bottom: 0;
+					&:before {
+						display: none;
+
+					}
+				}
+			}
+			
+			&__list {
+				&-item {
+					
+				}
+				&-link {
+					color: $gray1;
+					font: 400 13px/30px $font;
+					display: block;
+					border: 0;
+					margin: 0 -41px;
+					padding: 0 70px;
+					height: 30px;
+					&:hover {
+						background: $white1;
+					}
+				}
+			}
+		}
+
+	}
+
+	&-mob-menu {
+		background: $red1;
+		height: 50px;
+		margin: 0 -20px;
+		display: none;
+		@include b(tablet) {
+			display: block;
+		}
+		&__list {
+			white-space: nowrap;
+			&-item {
+				display: inline-block;
+				vertical-align: middle;
+				position: relative;
+				&:before {
+					@include before-img(1px, 60%);
+					background: $red2;
+					right: 0;
+					top: calc(50% - 30%);
+				}
+				&:last-child {
+					&:before {
+						display: none;
+					}
+				}
+				&:first-child {
+					&.active {
+						z-index: 0;
+					}
+				}
+				&.active {
+					z-index: 200;
+					&:before {
+						display: none;
+					}
+					.header-mob-menu__list-link {
+						background: $white;
+						fill: $red1;
+					}
+				}
+			}
+			&-link {
+				border: 0;
+				padding: 0 24px;
+				height: 50px;
+				display: flex;
+				fill: $white;
+				color: $white;
+				font: 900 12px $font;
+				align-items: center;
+				&-text {
+					display: inline-block;
+					vertical-align: middle;
+					text-transform: uppercase;
+					padding-left: 10px;
+				}
+			}
+			&-box {
+				margin: auto;
+			}
+			&-ico {
+				display: inline-block;
+				vertical-align: middle;
+				fill: inherit;
+			}
+		}
+		.modal {
+			position: absolute;
+			top: 100%;
+			right: 0;
+			left: 0;
+			width: 100%;
+			z-index: 40;
+			opacity: 0;
+			transition: all .3s;
+			visibility: hidden;
+			border-top: 0;
+			&.active {
+				z-index: 999;
+				visibility: visible;
+				opacity: 1;
+				transition: all .3s;
+			}
+			@include b(500) {
+				position: fixed;
+				top: 50px;
+				left: 0;
+				right: 0;
+				width: 100%;
+				max-width: 100%;
+			}
+		}
+	}
+
+}
+
+//----------------------------------------------------//
+// FOOTER                                             //
+//----------------------------------------------------//
+.footer {
+	position: relative;
+	z-index: 30;
+	background: $white1;
+	padding: 89px 0 75px;
+	@include b(tablet) {
+		padding: 37px 0 43px;
+	}
+
+	&__top {
+		padding-bottom: 69px;
+		@include b(tablet) {
+			display: none;
+		}
+	}
+
+	&__center {
+		font-size: 0;
+		padding-bottom: 84px;
+		@include b(tablet) {
+			display: none;
+		}
+		&-left {
+			display: inline-block;
+			vertical-align: bottom;
+			width: 66%;
+			padding-right: 30px;
+		}
+		&-right {
+			display: inline-block;
+			vertical-align: bottom;
+		}
+	}
+
+	&__bottom {
+
+	}
+
+	&-box {
+		padding: 0 90px;
+		@include b(desktop) {
+			padding: 0;
+		}
+		@include b(tablet) {
+			padding: 0;
+		}
+	}
+	
+	&-nav {
+		font-size: 0;
+		margin: 0 -15px;
+		
+		&__col {
+			display: inline-block;
+			vertical-align: top;
+			padding: 0 15px;
+			width: 25%;
+			&:nth-child(1) {
+				width: 29%;
+			}
+			&:nth-child(2) {
+				width: 28%;
+			}
+			&:nth-child(3) {
+				width: 23%;
+			}
+			&:nth-child(4) {
+				width: 20%;
+			}
+			@include b(tablet) {
+				padding-bottom: 30px;
+				width: 33.33%;
+				&:nth-child(1) {
+					width: 33.3%;
+				}
+				&:nth-child(2) {
+					width: 33.3%;
+				}
+				&:nth-child(3) {
+					width: 33.3%;
+				}
+				&:nth-child(4) {
+					width: 33.3%;
+				}
+			}
+		}
+
+		&__title {
+			@extend %title-border;
+			color: $gray1;
+			font: 900 12px $font;
+			text-transform: uppercase;
+	    letter-spacing: 2.4px;
+	    margin-bottom: 27px;
+
+		}
+
+		&__phone {
+			margin-top: 29px;
+			@include b(desktop) {
+				display: block;
+				width: 100%;
+				padding-left: 5px;
+				padding-right: 5px;
+			}
+			@include b(1150) {
+				.btn__ico {
+					display: none;
+				}
+			}
+		}
+
+	}
+
+	.subscription {
+		&__form {
+			max-width: 575px;
+			&-left {
+				width: calc(100% - 160px);
+				padding-right: 15px;
+			}
+			&-right {
+				width: 160px;
+			}
+		}
+	}
+
+	.social {
+		margin: 0 auto;
+		display: table;
+	}
+
+	&__copyright {
+		display: block;
+		color: $gray5;
+		font: 400 11px/25px $font;
+		&-top {
+			display: block;
+		}
+		@include b(tablet) {
+			font: 400 13px/20px $font;
+			color: $gray1;
+			&-top {
+				font-size: 14px;
+				padding-bottom: 21px;
+			}
+			.mobile-br {
+				display: block;
+			}
+		}
+	}
+
+}
