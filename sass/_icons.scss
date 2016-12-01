@@ -209,6 +209,10 @@
 	width: 220px;
 	height: 198px;
 }
+.basket-confirm-min-ico {
+	width: 24px;
+	height: 24px;
+}
 .open-book-ico {
 	width: 18px;
 	height: 14px;
@@ -237,18 +241,34 @@
 .navigation-01-ico {
 	width: 57px;
 	height: 54px;
+	@include b(tablet) {
+		width: 39.9px;
+		height: 37.8px;
+	}
 }
 .navigation-02-ico {
 	width: 55px;
 	height: 54px;
+	@include b(tablet) {
+		width: 38.5px;
+		height: 37.8px;
+	}
 }
 .navigation-03-ico {
 	width: 59px;
 	height: 50px;
+	@include b(tablet) {
+		width: 41.3;
+		height: 35px;
+	}
 }
 .navigation-04-ico {
 	width: 61px;
 	height: 51px;
+	@include b(tablet) {
+		width: 42.7px;
+		height: 35.7px;
+	}
 }
 
 .tv-ico {
@@ -270,4 +290,37 @@
 .service-mob-ico {
 	width: 18px;
 	height: 18px;
+}
+
+.delivery-tk-ico {
+	width: 22px;
+	height: 16px;
+}
+.delivery-ems-ico {
+	width: 16px;
+	height: 20px;
+}
+.delivery-time-ico {
+	width: 24px;
+	height: 24px;
+}
+
+.sale-rules-ico {
+	width: 17px;
+	height: 22px;
+}
+.exchanges-return-ico {
+	width: 24px;
+	height: 24px;
+}
+.accumulative-discount-ico {
+	width: 20px;
+	height: 18px;
+}
+
+
+// icon for shelbik
+.shelbik-1-ico {
+	width: 16px;
+	height: 14px;
 }

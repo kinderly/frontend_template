@@ -559,7 +559,7 @@
 	@include b(tablet) {
 		white-space: nowrap;
 		margin-right: -30px;
-		overflow: auto;
+		overflow-y: scroll;
 		&::-webkit-scrollbar { width: 0; }
 		-ms-overflow-style: none;
 		overflow: -moz-scrollbars-none;
@@ -965,6 +965,7 @@
 		position: relative;
 		margin-bottom: 2px;
 		padding-bottom: 1px;
+		display: none;
 		&:before {
 			@include before-img(calc(100% - 60px), 1px);
 			background: $gray2;
@@ -1187,6 +1188,60 @@
 		}
 	}
 
+	//mobile
+	&-mobile {
+		display: none;
+		@include b(tablet) {
+			display: block;
+		}
+		&__list {
+			
+			&-item {
+				padding: 20px 0 28px;
+				position: relative;
+				background-repeat: no-repeat;
+				background-size: cover;
+				&:before {
+					@include before-img(100%,100%);
+					top: 0;
+					left: 0;
+					background: rgba(#343c48, .7);
+				}
+			}
+
+			&-box {
+				border-top: 2px solid $white;
+				border-bottom: 2px solid $white;
+				margin: 0 20px;
+				padding: 7px 0 20px;
+				position: relative;
+			}
+
+			&-title {
+				color: $white;
+				font: 700 80px $font;
+				display: block;
+				text-align: center;
+				padding-bottom: 10px;
+			}
+
+			&-text {
+				color: $white;
+				font: 700 18px/20px $font;
+				display: block;
+				text-align: center;
+				padding-bottom: 25px;
+			}
+
+			&-link {
+				display: table;
+				margin: 0 auto;
+			}
+
+		}
+
+	}
+
 }
 
 /* Finsih main banner block */
@@ -1309,7 +1364,7 @@
 			z-index: -1;
 			opacity: 0;
 			height: 100vh;
-   		overflow: auto;
+   		overflow-y: scroll;
 			&.active {
 				z-index: 199;
 				visibility: visible;
@@ -1351,7 +1406,7 @@
 	&-select {
 		font-size: 0;
 		border-top: 1px solid $gray2;	
-		margin-bottom: 9px;
+		margin-top: 9px;
 		position: relative;
 		&:before {
 			@include before-img(100%,1px);
@@ -1577,7 +1632,7 @@
 			margin: 0 -15px;
 			position: relative;
 			max-height: 300px;
-			overflow: auto;
+			overflow-y: scroll;
 			&:before {
 				@include before-img(calc(100% - 30px), 1px);
 				bottom: 0;
@@ -1831,7 +1886,7 @@
 			}
 		}
 		@include b(1400) {
-			padding: 29px 5 19px;
+			padding: 29px 5px 19px;
 		}
 		@include b(1300) {
 			width: 25%;
@@ -2293,7 +2348,7 @@
 			@include b(tablet) {
 				display: block;
 				margin: 0;
-				padding-bottom: 16px;
+				padding: 0;
 				&:last-child {
 					padding-bottom: 0;
 				}
@@ -2312,7 +2367,8 @@
 				color: $gray3;
 			}
 			@include b(tablet) {
-				display: inline-block;
+				display: table;
+				line-height: 30px;
 			}
 		}
 
@@ -2839,7 +2895,7 @@
 		&__box {
 			font-size: 0;
 			margin-bottom: 27px;
-			overflow: auto;
+			overflow-y: scroll;
 			max-height: 520px;
 		}
 		&-nav {
@@ -2968,7 +3024,7 @@
 			}
 			&-textarea {
 				height: 200px;
-				overflow: auto;
+				overflow-y: scroll;
 				font-size: 15px;
 			}
 			&-col {
@@ -3394,7 +3450,7 @@
 			}
 			.modal-delivery__container {
 				overflow: hidden;
-				overflow-y: auto;
+				overflow-y: scroll;
 				max-height: 160px;
 			}
 			.modal__title {
@@ -3476,8 +3532,17 @@
 }
 .overlay-overflow {
 	overflow-y: scroll;
+
 	body {
 		overflow: hidden;
+	}
+}
+@include b(tablet) {
+	.overlay-overflow-mob {
+		
+		body {
+			overflow: hidden!important;
+		}
 	}
 }
 /* Finish modal blocks */
@@ -3490,10 +3555,21 @@
 
 	&-item {
 		border-bottom: 1px solid $gray2;
-		padding: 19px 0 26px;
 		&:last-child {
 			border-bottom: 0;
 			padding-bottom: 0;
+		}
+	}
+
+	&-box {
+		padding: 19px 0 26px;
+		color: $gray1;
+		border: 0;
+		fill: $gray1;
+		display: block;
+		&:hover {
+			color: $red1;
+			fill: $red1;
 		}
 	}
 
@@ -3513,17 +3589,12 @@
 	&-ico {
 		display: block;
 		margin: 0 auto;
-		fill: $gray1;
+		fill: inherit;
 	}
 
-	&-link {
-		color: $gray1;
-		font: 400 14px $font;
-		border: 0;
+	&-text {
 		letter-spacing: .3px;
-		&:hover {
-			color: $red1;
-		}
+		font: 400 14px $font;
 	}
 
 }
@@ -3855,7 +3926,7 @@
 	border-top: 0;
 	max-height: 400px;
 	overflow: hidden;
-	overflow-y: auto;
+	overflow-y: scroll;
 	&__item {
 		color: $gray1!important;
 		font: 400 14px $font!important;
@@ -3890,3 +3961,91 @@
 	}
 
 }
+
+
+@include b(1040) {
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+::-webkit-scrollbar:vertical {
+    width: 12px;
+}
+::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+}
+
+/* Start shelbik style */
+.shelbik-line {
+	display: inline-block;
+	vertical-align: top;
+	padding: 0 15px;
+}
+.shelbik-row {
+	padding-bottom: 30px;
+}
+.shelbik {
+	position: relative;
+  border-radius: 50%;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  font: 900 10px/40px $mainFont;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+	
+	&--1 {
+		color: $gray5;
+		fill: $gray5;
+		border-color: $gray10;
+	}
+	&--2 {
+		color: $red1;
+		fill: $red1;
+		border-color: $gray10;
+	}
+	&--3 {
+		color: $green1;
+		fill: $green1;
+		border-color: $gray10;
+	}
+	&--4 {
+		color: $white;
+		fill: $white;
+		background: $red1;
+		border-color: $red1;
+	}
+	&--5 {
+		color: $white;
+		fill: $white;
+		background: $green1;
+		border-color: $green1;
+	}
+
+	&__text {
+		
+	}
+	&__ico {
+		fill: inherit;
+		display: block;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		top: 0;
+		margin: auto;
+	}
+
+}
+/* Finsih shelbik style */

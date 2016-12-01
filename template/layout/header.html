@@ -1,0 +1,2004 @@
+ <!doctype html>
+<html lang="en-US">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>ProjecName - Главная</title>
+		<meta name="description" content="">
+		<meta name ="viewport" content="width=device-width, initial-scale=1">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="MobileOptimized" content="320">
+		<!--[if IE]><script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+		<link rel="stylesheet" href="css/widgets.css">
+		<link rel="stylesheet" href="css/main.css">
+		
+	</head>
+	<body>
+	<!--[if lt IE 9]>
+		<p class="browserupgrade" style="color: #fff;background: #000;padding: 20px 15px; text-align: center;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+	<![endif]-->
+	
+	<div style="display: none">
+		@@include('img/svg-sprite/symbol/svg/sprite.symbol.svg')
+	</div>
+
+	<div class="wrapper">
+	
+		<!-- HEADER -->
+		<header class="header @@mod">
+			<div class="header__top">
+				<div class="header__top-left">
+					<div class="header-catalog">
+						<a class="header-catalog__link js-overlay">
+							<svg class="header-catalog__ico menu-red-ico">
+								<use xlink:href="#menu-red"></use>
+							</svg>
+							<span class="header-catalog__link-text">КАТАЛОГ</span>
+						</a>
+						<div class="header-catalog__drop">
+							<div class="header-mob-menu">
+								<ul class="header-mob-menu__list">
+									<li class="header-mob-menu__list-item header-mob-menu__list-item--hamburger">
+										<div class="header-mob-menu__list-block js-close-navBar-parent">
+											<a href="#" class="header-mob-menu__list-link js-clsoe-navBar">
+													<svg class="header-mob-menu__list-ico close-modal-ico">
+														<use xlink:href="#close-modal"></use>
+													</svg>
+												</span>
+											</a>
+											<a href="#" class="header-mob-menu__list-link js-open-navBar">
+												<span class="header-mob-menu__list-box">
+													<svg class="header-mob-menu__list-ico menu-red-ico">
+														<use xlink:href="#menu-red"></use>
+													</svg>
+												</span>
+											</a>
+										</div>
+									</li>
+									<li class="header-mob-menu__list-item">
+										<div class="header-mob-menu__list-block js-mob-lk-parent">
+											<a href="#" class="header-mob-menu__list-link js-mob-lk js-overlay">
+												<span class="header-mob-menu__list-box">
+													<svg class="header-mob-menu__list-ico user-ico">
+														<use xlink:href="#user"></use>
+													</svg>
+												</span>
+											</a>
+											<div class="modal header-mob-menu__drop-lk" id="modal-lk-mob">	
+												<div class="modal-lk">
+													<div class="modal-lk-enter modal-lk-block" style="display: blcok" id="modal-lk-mob-enter">
+														<div class="modal__top">
+															<svg class="modal__top-ico enter-modal-ico">
+																<use xlink:href="#enter-modal"></use>
+															</svg>
+														</div>
+														<h3 class="modal__title">Вход в личный кабинет</h3>
+														<form action="#" class="modal-lk__form">
+															<div class="modal-lk__form-row">	
+																<input type="email" required class="input input--border modal-lk__form-input" placeholder="E-mail">
+															</div>	
+															<div class="modal-lk__form-row">	
+																<input type="text" required class="input input--border modal-lk__form-input" placeholder="Пароль">
+															</div>
+															<div class="modal-lk__form-row">
+																<button type="submit" class="btn btn--gray2 modal-lk__form-submit">Войти</button>
+															</div>
+														</form>
+														<div class="modal-lk__bottom">
+															<a href="#modal-lk-mob-changedPass" class="modal-lk__bottom-link">Забыли пароль?</a>
+															<a href="#modal-lk-mob-registration" class="modal-lk__bottom-link">Регистрация</a>
+														</div>
+													</div>
+													<div class="modal-lk-registration modal-lk-block" style="display: none" id="modal-lk-mob-registration">
+														<div class="modal__top">
+															<svg class="modal__top-ico registration-modal-ico">
+																<use xlink:href="#registration-modal"></use>
+															</svg>
+														</div>
+														<h3 class="modal__title">Регистрация<br> нового пользователя</h3>
+														<form action="#" class="modal-lk__form">
+															<div class="modal-lk__form-row">	
+																<input type="email" required class="input input--border modal-lk__form-input" placeholder="E-mail">
+															</div>	
+															<div class="modal-lk__form-row">
+																<button type="submit" class="btn btn--gray2 modal-lk__form-submit">Войти</button>
+															</div>
+														</form>
+														<div class="modal-lk__bottom">
+															<a href="#modal-lk-mob-enter" class="modal-lk__bottom-link">Уже зарегистрированы?</a>
+														</div>
+													</div>	
+													<div class="modal-lk-changedPass modal-lk-block" style="display: none" id="modal-lk-mob-changedPass">
+														<div class="modal__top">
+															<svg class="modal__top-ico change-pass-modal-ico">
+																<use xlink:href="#change-pass-modal"></use>
+															</svg>
+														</div>
+														<h3 class="modal__title">Восстановление пароля</h3>
+														<form action="back/form.php" class="modal-lk__form" id="modal-lk-changedPass__form-mob">
+															<div class="modal-lk__form-row">	
+																<input type="email" required class="input input--border modal-lk__form-input" placeholder="E-mail">
+															</div>	
+															<div class="modal-lk__form-row">
+																<button type="submit" class="btn btn--gray2 modal-lk__form-submit">Войти</button>
+															</div>
+														</form>
+														<div class="modal-lk__bottom">
+															<a href="#modal-lk-mob-enter" class="modal-lk__bottom-link">Войти на сайт</a>
+															<a href="#modal-lk-mob-registration" class="modal-lk__bottom-link">Регистрация</a>
+														</div>
+													</div>
+												</div>
+												<a href="#" class="modal__close">
+													<svg class="modal__close-ico close-modal-ico">
+														<use xlink:href="#close-modal"></use>
+													</svg>
+												</a>
+											</div>
+										</div>
+									</li>
+									<li class="header-mob-menu__list-item">
+										<div class="header-mob-menu__list-block js-mob-messengers-parent">
+											<a href="#" class="header-mob-menu__list-link js-mob-messengers js-overlay">
+												<span class="header-mob-menu__list-box">
+													<svg class="header-mob-menu__list-ico contact-book-mob-ico">
+														<use xlink:href="#contact-book-mob"></use>
+													</svg>
+												</span>
+											</a>
+											<div class="modal header-mob-menu__messengers">	
+												<div class="modal-messengers">
+													<div class="modal__top">
+														<svg class="modal__top-ico messengers-ico">
+															<use xlink:href="#messengers"></use>
+														</svg>
+													</div>
+													<h3 class="modal__title">Мессенджеры и соцсети</h3>
+													<ul class="modal-messengers__list">
+														<li class="modal-messengers__list-item">
+															<a href="#" class="modal-messengers__list-link">
+																<svg class="modal-messengers__list-ico whatsup-modal-ico">
+																	<use xlink:href="#whatsup-modal"></use>
+																</svg>
+															</a>
+														</li>
+														<li class="modal-messengers__list-item">
+															<a href="#" class="modal-messengers__list-link">
+																<svg class="modal-messengers__list-ico viber-modal-ico">
+																	<use xlink:href="#viber-modal"></use>
+																</svg>
+															</a>
+														</li>
+														<li class="modal-messengers__list-item">
+															<a href="#" class="modal-messengers__list-link">
+																<svg class="modal-messengers__list-ico vk-modal-ico">
+																	<use xlink:href="#vk-modal"></use>
+																</svg>
+															</a>
+														</li>
+														<li class="modal-messengers__list-item">
+															<a href="#" class="modal-messengers__list-link">
+																<svg class="modal-messengers__list-ico fb-modal-ico">
+																	<use xlink:href="#fb-modal"></use>
+																</svg>
+															</a>
+														</li>
+													</ul>
+													<p class="modal-messengers__text">Чтобы написать, добавьте наш номер<br> 8 (926) 454 6565 в свою адресную книгу</p>		
+													<div class="modal-messengers__bottom">
+														<svg class="modal-messengers__bottom-ico phone-modal-ico">
+															<use xlink:href="#phone-modal"></use>
+														</svg>
+														<a class="modal-messengers__bottom-phone" href="tel:88003331577">8 (800) 333 15 77</a>
+														<span class="modal-messengers__bottom-text">(с 9 до 21)</span>
+													</div>
+												</div>	
+												<a href="#" class="modal__close">
+													<svg class="modal__close-ico close-modal-ico">
+														<use xlink:href="#close-modal"></use>
+													</svg>
+												</a>
+											</div>
+										</div>
+									</li>
+									<li class="header-mob-menu__list-item header-mob-menu__list-item--search">
+										<div class="header-mob-menu__list-block js-mob-search-parent header-search">
+											<div class="header-search-mob js-overlay js-mob-search-nav-btn">
+												<svg class="header-search-mob__ico search-white-ico">
+													<use xlink:href="#search-white"></use>
+												</svg>
+											</div>
+											<form action="#" class="header-search__form">
+												<input type="hidden" id="header-search-mob-id">
+												<input type="text" required class="input header-search__input" id="header-search-mob" placeholder="поиск">
+												<button type="submit" class="header-search__link">
+													<svg class="header-search__ico search-white-ico">
+														<use xlink:href="#search-white"></use>
+													</svg>
+												</button>
+												<svg class="header-search__close close-modal-ico">
+													<use xlink:href="#close-modal"></use>
+												</svg>
+
+											</form>	
+										</div>
+									</li>
+									<li class="header-mob-menu__list-item">
+										<div class="header-mob-menu__list-block">
+											<a href="#" class="header-mob-menu__list-link">
+												<span class="header-mob-menu__list-box">
+													<svg class="header-mob-menu__list-ico service-mob-ico">
+														<use xlink:href="#service-mob"></use>
+													</svg>
+													<span class="header-mob-menu__list-link-text">СЕРВИС</span>
+												</span>
+											</a>
+										</div>
+									</li>
+								</ul>
+								
+							</div>
+							<div class="header-nav">
+								<div class="header-nav__head">
+									<div class="header-nav__head-left">
+										<svg class="header-nav__head-ico menu-red-ico">
+											<use xlink:href="#menu-red"></use>
+										</svg>
+										<span class="header-nav__head-text">КАТАЛОГ</span>
+									</div>
+									<div class="header-nav__head-right">
+										<span class="header-nav__head-title">Игрушки и творчество</span>
+									</div>
+								</div>
+								<div class="js-scroll-panel-nav">
+									<div class="header-nav__navigation">
+										<a href="#header-nav__clothes" class="header-nav__navigation-link" data-text="Игрушки и творчество2">
+											<svg class="header-nav__navigation-ico navigation-01-ico">
+												<use xlink:href="#navigation-01"></use>
+											</svg>
+										</a>
+										<a href="#header-nav__toys" class="header-nav__navigation-link" data-text="Игрушки и творчество">
+											<svg class="header-nav__navigation-ico navigation-02-ico">
+												<use xlink:href="#navigation-02"></use>
+											</svg>
+										</a>
+										<a href="#header-nav__child" class="header-nav__navigation-link" data-text="Игрушки и творчество3">
+											<svg class="header-nav__navigation-ico navigation-03-ico">
+												<use xlink:href="#navigation-03"></use>
+											</svg>
+										</a>
+									</div>
+									<ul class="header-nav__list" id="header-nav__clothes">
+										<li class="header-nav__list-item header-nav__list-item--submenu">
+											<a href="#" class="header-nav__list-link">
+												<svg class="header-nav__list-ico tv-ico">
+													<use xlink:href="#navigation--tv"></use>
+												</svg>
+												<span class="header-nav__list-text">ТВ хиты2</span>
+												<svg class="header-nav__list-sub-ico">
+													<use xlink:href="#arrow-forward-right"></use>
+												</svg>
+											</a>
+											<div class="header-nav-submenu">
+												<div class="header-nav-submenu__back">
+													<a href="#" class="header-nav-submenu__back-link">
+														<svg class="header-nav-submenu__back-ico">
+															<use xlink:href="#arrow-back"></use>
+														</svg>
+														<span class="header-nav-submenu__back-text">Назад</span>
+													</a>
+													<a href="#" class="header-nav-submenu__all-items">Все игрушки</a>
+												</div>
+												<div class="header-nav-submenu__box ">
+													<ul class="header-nav-submenu__list">
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Конструкторы
+															</a>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Куклы
+															</a>
+															<div class="header-nav-submenu2">
+																<ul class="header-nav-submenu2__list">
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																</ul>
+															</div>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Транспорт
+															</a>
+															<div class="header-nav-submenu2">
+																<ul class="header-nav-submenu2__list">
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																</ul>
+															</div>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Железные дороги
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="header-nav__list-item header-nav__list-item--submenu">
+											<a href="#" class="header-nav__list-link">
+												<svg class="header-nav__list-ico popular-tv-ico">
+													<use xlink:href="#navigation--popular-tv"></use>
+												</svg>
+												<span class="header-nav__list-text">Популярные серии2</span>
+												<svg class="header-nav__list-sub-ico">
+													<use xlink:href="#arrow-forward-right"></use>
+												</svg>
+											</a>
+											<div class="header-nav-submenu">
+												<div class="header-nav-submenu__back">
+													<a href="#" class="header-nav-submenu__back-link">
+														<svg class="header-nav-submenu__back-ico">
+															<use xlink:href="#arrow-back"></use>
+														</svg>
+														<span class="header-nav-submenu__back-text">Назад</span>
+													</a>
+													<a href="#" class="header-nav-submenu__all-items">Все игрушки</a>
+												</div>
+												<div class="header-nav-submenu__box ">
+													<ul class="header-nav-submenu__list">
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Конструкторы
+															</a>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Куклы
+															</a>
+															<div class="header-nav-submenu2">
+																<ul class="header-nav-submenu2__list">
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																</ul>
+															</div>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Транспорт
+															</a>
+															<div class="header-nav-submenu2">
+																<ul class="header-nav-submenu2__list">
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																</ul>
+															</div>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Железные дороги
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="header-nav__list-item header-nav__list-item--submenu">
+											<a href="#" class="header-nav__list-link">
+												<svg class="header-nav__list-ico toy-child-ico">
+													<use xlink:href="#navigation--toy-child"></use>
+												</svg>
+												<span class="header-nav__list-text">Игрушки для малышей2</span>
+												<svg class="header-nav__list-sub-ico">
+													<use xlink:href="#arrow-forward-right"></use>
+												</svg>
+											</a>
+											<div class="header-nav-submenu">
+												<div class="header-nav-submenu__back">
+													<a href="#" class="header-nav-submenu__back-link">
+														<svg class="header-nav-submenu__back-ico">
+															<use xlink:href="#arrow-back"></use>
+														</svg>
+														<span class="header-nav-submenu__back-text">Назад</span>
+													</a>
+													<a href="#" class="header-nav-submenu__all-items">Все игрушки</a>
+												</div>
+												<div class="header-nav-submenu__box">
+													<ul class="header-nav-submenu__list">
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Конструкторы
+															</a>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Куклы
+															</a>
+															<div class="header-nav-submenu2">
+																<ul class="header-nav-submenu2__list">
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																</ul>
+															</div>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Транспорт
+															</a>
+															<div class="header-nav-submenu2">
+																<ul class="header-nav-submenu2__list">
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																</ul>
+															</div>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Железные дороги
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<ul class="header-nav__list" id="header-nav__toys">
+										<li class="header-nav__list-item header-nav__list-item--submenu">
+											<a href="#" class="header-nav__list-link">
+												<svg class="header-nav__list-ico tv-ico">
+													<use xlink:href="#navigation--tv"></use>
+												</svg>
+												<span class="header-nav__list-text">ТВ хиты</span>
+												<svg class="header-nav__list-sub-ico">
+													<use xlink:href="#arrow-forward-right"></use>
+												</svg>
+											</a>
+											<div class="header-nav-submenu">
+												<div class="header-nav-submenu__back">
+													<a href="#" class="header-nav-submenu__back-link">
+														<svg class="header-nav-submenu__back-ico">
+															<use xlink:href="#arrow-back"></use>
+														</svg>
+														<span class="header-nav-submenu__back-text">Назад</span>
+													</a>
+												</div>
+												<div class="header-nav-submenu__box">
+													<div class="header-nav-submenu__top">
+														<svg class="header-nav-submenu__ico tv-ico">
+															<use xlink:href="#navigation--tv"></use>
+														</svg>
+														<span class="header-nav-submenu__title">Все игрушки</span>
+													</div>
+													<ul class="header-nav-submenu__list">
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Конструкторы
+															</a>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Куклы
+															</a>
+															<div class="header-nav-submenu2">
+																<ul class="header-nav-submenu2__list">
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																</ul>
+															</div>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Транспорт
+															</a>
+															<div class="header-nav-submenu2">
+																<ul class="header-nav-submenu2__list">
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																</ul>
+															</div>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Железные дороги
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="header-nav__list-item header-nav__list-item--submenu">
+											<a href="#" class="header-nav__list-link">
+												<svg class="header-nav__list-ico popular-tv-ico">
+													<use xlink:href="#navigation--popular-tv"></use>
+												</svg>
+												<span class="header-nav__list-text">Популярные серии</span>
+												<svg class="header-nav__list-sub-ico">
+													<use xlink:href="#arrow-forward-right"></use>
+												</svg>
+											</a>
+											<div class="header-nav-submenu">
+												<div class="header-nav-submenu__back">
+													<a href="#" class="header-nav-submenu__back-link">
+														<svg class="header-nav-submenu__back-ico">
+															<use xlink:href="#arrow-back"></use>
+														</svg>
+														<span class="header-nav-submenu__back-text">Назад</span>
+													</a>
+												</div>
+												<div class="header-nav-submenu__box">
+													<div class="header-nav-submenu__top">
+														<svg class="header-nav-submenu__ico tv-ico">
+															<use xlink:href="#navigation--tv"></use>
+														</svg>
+														<span class="header-nav-submenu__title">Все игрушки</span>
+													</div>
+													<ul class="header-nav-submenu__list">
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Конструкторы
+															</a>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Куклы
+															</a>
+															<div class="header-nav-submenu2">
+																<ul class="header-nav-submenu2__list">
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																</ul>
+															</div>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Транспорт
+															</a>
+															<div class="header-nav-submenu2">
+																<ul class="header-nav-submenu2__list">
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																</ul>
+															</div>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Железные дороги
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="header-nav__list-item header-nav__list-item--submenu">
+											<a href="#" class="header-nav__list-link">
+												<svg class="header-nav__list-ico toy-child-ico">
+													<use xlink:href="#navigation--toy-child"></use>
+												</svg>
+												<span class="header-nav__list-text">Игрушки для малышей</span>
+												<svg class="header-nav__list-sub-ico">
+													<use xlink:href="#arrow-forward-right"></use>
+												</svg>
+											</a>
+											<div class="header-nav-submenu">
+												<div class="header-nav-submenu__back">
+													<a href="#" class="header-nav-submenu__back-link">
+														<svg class="header-nav-submenu__back-ico">
+															<use xlink:href="#arrow-back"></use>
+														</svg>
+														<span class="header-nav-submenu__back-text">Назад</span>
+													</a>
+												</div>
+												<div class="header-nav-submenu__box">
+													<div class="header-nav-submenu__top">
+														<svg class="header-nav-submenu__ico tv-ico">
+															<use xlink:href="#navigation--tv"></use>
+														</svg>
+														<span class="header-nav-submenu__title">Все игрушки</span>
+													</div>
+													<ul class="header-nav-submenu__list">
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Конструкторы
+															</a>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Куклы
+															</a>
+															<div class="header-nav-submenu2">
+																<ul class="header-nav-submenu2__list">
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																</ul>
+															</div>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Транспорт
+															</a>
+															<div class="header-nav-submenu2">
+																<ul class="header-nav-submenu2__list">
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																</ul>
+															</div>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Железные дороги
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+									</ul>
+									<ul class="header-nav__list" id="header-nav__child">
+										<li class="header-nav__list-item header-nav__list-item--submenu">
+											<a href="#" class="header-nav__list-link">
+												<svg class="header-nav__list-ico tv-ico">
+													<use xlink:href="#navigation--tv"></use>
+												</svg>
+												<span class="header-nav__list-text">ТВ хиты3</span>
+												<svg class="header-nav__list-sub-ico">
+													<use xlink:href="#arrow-forward-right"></use>
+												</svg>
+											</a>
+											<div class="header-nav-submenu">
+												<div class="header-nav-submenu__back">
+													<a href="#" class="header-nav-submenu__back-link">
+														<svg class="header-nav-submenu__back-ico">
+															<use xlink:href="#arrow-back"></use>
+														</svg>
+														<span class="header-nav-submenu__back-text">Назад</span>
+													</a>
+												</div>
+												<div class="header-nav-submenu__box ">
+													<div class="header-nav-submenu__top">
+														<svg class="header-nav-submenu__ico tv-ico">
+															<use xlink:href="#navigation--tv"></use>
+														</svg>
+														<span class="header-nav-submenu__title">Все игрушки</span>
+													</div>
+													<ul class="header-nav-submenu__list">
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Конструкторы
+															</a>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Куклы
+															</a>
+															<div class="header-nav-submenu2">
+																<ul class="header-nav-submenu2__list">
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																</ul>
+															</div>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Транспорт
+															</a>
+															<div class="header-nav-submenu2">
+																<ul class="header-nav-submenu2__list">
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																</ul>
+															</div>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Железные дороги
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="header-nav__list-item header-nav__list-item--submenu">
+											<a href="#" class="header-nav__list-link">
+												<svg class="header-nav__list-ico popular-tv-ico">
+													<use xlink:href="#navigation--popular-tv"></use>
+												</svg>
+												<span class="header-nav__list-text">Популярные серии3</span>
+												<svg class="header-nav__list-sub-ico">
+													<use xlink:href="#arrow-forward-right"></use>
+												</svg>
+											</a>
+											<div class="header-nav-submenu">
+												<div class="header-nav-submenu__back">
+													<a href="#" class="header-nav-submenu__back-link">
+														<svg class="header-nav-submenu__back-ico">
+															<use xlink:href="#arrow-back"></use>
+														</svg>
+														<span class="header-nav-submenu__back-text">Назад</span>
+													</a>
+												</div>
+												<div class="header-nav-submenu__box ">
+													<div class="header-nav-submenu__top">
+														<svg class="header-nav-submenu__ico tv-ico">
+															<use xlink:href="#navigation--tv"></use>
+														</svg>
+														<span class="header-nav-submenu__title">Все игрушки</span>
+													</div>
+													<ul class="header-nav-submenu__list">
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Конструкторы
+															</a>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Куклы
+															</a>
+															<div class="header-nav-submenu2">
+																<ul class="header-nav-submenu2__list">
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																</ul>
+															</div>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Транспорт
+															</a>
+															<div class="header-nav-submenu2">
+																<ul class="header-nav-submenu2__list">
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																</ul>
+															</div>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Железные дороги
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+										<li class="header-nav__list-item header-nav__list-item--submenu">
+											<a href="#" class="header-nav__list-link">
+												<svg class="header-nav__list-ico toy-child-ico">
+													<use xlink:href="#navigation--toy-child"></use>
+												</svg>
+												<span class="header-nav__list-text">Игрушки для малышей3</span>
+												<svg class="header-nav__list-sub-ico">
+													<use xlink:href="#arrow-forward-right"></use>
+												</svg>
+											</a>
+											<div class="header-nav-submenu">
+												<div class="header-nav-submenu__back">
+													<a href="#" class="header-nav-submenu__back-link">
+														<svg class="header-nav-submenu__back-ico">
+															<use xlink:href="#arrow-back"></use>
+														</svg>
+														<span class="header-nav-submenu__back-text">Назад</span>
+													</a>
+												</div>
+												<div class="header-nav-submenu__box ">
+													<div class="header-nav-submenu__top">
+														<svg class="header-nav-submenu__ico tv-ico">
+															<use xlink:href="#navigation--tv"></use>
+														</svg>
+														<span class="header-nav-submenu__title">Все игрушки</span>
+													</div>
+													<ul class="header-nav-submenu__list">
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Конструкторы
+															</a>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Куклы
+															</a>
+															<div class="header-nav-submenu2">
+																<ul class="header-nav-submenu2__list">
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																</ul>
+															</div>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Транспорт
+															</a>
+															<div class="header-nav-submenu2">
+																<ul class="header-nav-submenu2__list">
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																	<div class="header-nav-submenu2__row">
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Транспорт</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Железные дороги
+																				<span class="header-nav__new">NEW</span>
+																			</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игровые наборы</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Интерактивные игрушки</a>
+																		</li>
+																		<li class="header-nav-submenu2__list-item">
+																			<a href="#" class="header-nav-submenu2__list-link">Игрушечное оружие</a>
+																		</li>
+																	</div>
+																</ul>
+															</div>
+														</li>
+														<li class="header-nav-submenu__list-item">
+															<a href="#" class="header-nav-submenu__list-link">
+																Железные дороги
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>	
+								<a href="#" class="modal__close">
+									<svg class="modal__close-ico close-modal-ico">
+										<use xlink:href="#close-modal"></use>
+									</svg>
+								</a>
+							</div>
+							<div class="overlay2"></div>
+						</div>
+					</div>
+
+					<div class="header-search">
+						<div class="header-search-mob js-mob-search-button">
+							<svg class="header-search-mob__ico search-white-ico">
+								<use xlink:href="#search-white"></use>
+							</svg>
+						</div>
+						<form action="#" class="header-search__form">
+							<input type="hidden" id="header-search-id">
+							<input type="text" required class="input header-search__input" id="header-search" placeholder="поиск">
+							<button type="submit" class="header-search__link">
+								<svg class="header-search__ico search-white-ico">
+									<use xlink:href="#search-white"></use>
+								</svg>
+							</button>
+							<svg class="header-search__close close-modal-ico">
+								<use xlink:href="#close-modal"></use>
+							</svg>
+
+						</form>
+					</div>
+				</div>
+				<div class="header__top-right">
+					<div class="header-login">
+						<a href="#" class="header-login__link js-login-modal js-overlay">
+							<svg class="header-login__ico user-ico">
+								<use xlink:href="#user"></use>
+							</svg>
+							<span class="header-login__link-text">войти</span>
+						</a>
+						<div class="modal header-login__drop" id="modal-lk">	
+							<div class="modal-lk">
+								<div class="modal-lk-enter modal-lk-block" style="display: blcok" id="modal-lk-enter">
+									<div class="modal__top">
+										<svg class="modal__top-ico enter-modal-ico">
+											<use xlink:href="#enter-modal"></use>
+										</svg>
+									</div>
+									<h3 class="modal__title">Вход в личный кабинет</h3>
+									<form action="#" class="modal-lk__form">
+										<div class="modal-lk__form-row">	
+											<input type="email" required class="input input--border modal-lk__form-input" placeholder="E-mail">
+										</div>	
+										<div class="modal-lk__form-row">	
+											<input type="text" required class="input input--border modal-lk__form-input" placeholder="Пароль">
+										</div>
+										<div class="modal-lk__form-row">
+											<button type="submit" class="btn btn--gray2 modal-lk__form-submit">Войти</button>
+										</div>
+									</form>
+									<div class="modal-lk__bottom">
+										<a href="#modal-lk-changedPass" class="modal-lk__bottom-link">Забыли пароль?</a>
+										<a href="#modal-lk-registration" class="modal-lk__bottom-link">Регистрация</a>
+									</div>
+								</div>
+								<div class="modal-lk-registration modal-lk-block" style="display: none" id="modal-lk-registration">
+									<div class="modal__top">
+										<svg class="modal__top-ico registration-modal-ico">
+											<use xlink:href="#registration-modal"></use>
+										</svg>
+									</div>
+									<h3 class="modal__title">Регистрация<br> нового пользователя</h3>
+									<form action="#" class="modal-lk__form">
+										<div class="modal-lk__form-row">	
+											<input type="email" required class="input input--border modal-lk__form-input" placeholder="E-mail">
+										</div>	
+										<div class="modal-lk__form-row">
+											<button type="submit" class="btn btn--gray2 modal-lk__form-submit">Войти</button>
+										</div>
+									</form>
+									<div class="modal-lk__bottom">
+										<a href="#modal-lk-enter" class="modal-lk__bottom-link">Уже зарегистрированы?</a>
+									</div>
+								</div>	
+								<div class="modal-lk-changedPass modal-lk-block" style="display: none" id="modal-lk-changedPass">
+									<div class="modal__top">
+										<svg class="modal__top-ico change-pass-modal-ico">
+											<use xlink:href="#change-pass-modal"></use>
+										</svg>
+									</div>
+									<h3 class="modal__title">Восстановление пароля</h3>
+									<form action="back/form.php" class="modal-lk__form" id="modal-lk-changedPass__form-desktop">
+										<div class="modal-lk__form-row">	
+											<input type="email" required class="input input--border modal-lk__form-input" placeholder="E-mail">
+										</div>	
+										<div class="modal-lk__form-row">
+											<button type="submit" class="btn btn--gray2 modal-lk__form-submit">Войти</button>
+										</div>
+									</form>
+									<div class="modal-lk__bottom">
+										<a href="#modal-lk-enter" class="modal-lk__bottom-link">Войти на сайт</a>
+										<a href="#modal-lk-registration" class="modal-lk__bottom-link">Регистрация</a>
+									</div>
+								</div>
+							</div>
+							<a href="#" class="modal__close">
+								<svg class="modal__close-ico close-modal-ico">
+									<use xlink:href="#close-modal"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+					<div class="header-basket">
+						<a href="#" class="header-basket__link js-basket-modal js-overlay">
+							<svg class="header-basket__ico shopping-bag-ico">
+								<use xlink:href="#shopping-bag"></use>
+							</svg>
+							<span class="header-basket__link-text">4</span>
+						</a>
+						<div class="modal header-basket__drop" id="modal-basket">
+							<div class="modal-basket">
+								<div class="modal__top">
+									<svg class="modal__top-ico cart-modal-ico">
+										<use xlink:href="#cart-modal"></use>
+									</svg>
+								</div>
+								<div class="modal-basket__box">
+									<div class="modal-basket__row">
+										<h3 class="modal__title">Корзина</h3>
+										<span class="modal-basket__noItem">У вас нет товаров в корзине</span>
+										<a href="#" class="btn btn--green modal-basket__back js-close-modal">Вернуться</a>
+									</div>
+									<div class="modal-basket__row">
+										<h3 class="modal__title">Подпишись на рассылку!</h3>
+										<span class="modal-basket__noItem">С акциями и распродажами!</span>
+										<form action="back/form.php" class="modal-basket__form" id="modal-basket-subscription__form">
+											<div class="modal-basket__form-row">
+												<input type="email" required class="input input--border" placeholder="E-mail">
+											</div>
+											<div class="modal-basket__form-row">
+												<button type="submit" class="btn btn--gray3 modal-basket__form-submit">Подписаться</button>
+											</div>
+										</form>
+									</div>
+								</div>	
+							</div>
+							<a href="#" class="modal__close">
+								<svg class="modal__close-ico close-modal-ico">
+									<use xlink:href="#close-modal"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="header__logo">
+					<a href="#" class="header__logo-link">
+						<svg class="header__logo-ico logo-ico">
+							<use xlink:href="#logo"></use>
+						</svg>
+					</a>
+				</div>
+			</div>
+			<div class="header__bottom">
+				<div class="header__bottom-left">
+					<a href="#modal-delivery" class="header-place js-popup-large">
+						<svg class="header-place__ico map-red-ico">
+							<use xlink:href="#map-red"></use>
+						</svg>
+						<span class="header-place__city">Санкт-Петербург</span>
+						<span class="header-place__delivery">Способы доставки</span>
+					</div>
+				</a>
+				<div class="header__bottom-right">
+					<div class="header-contacts">
+						<svg class="header-contacts__ico phone-red-ico">
+							<use xlink:href="#phone-red"></use>
+						</svg>
+						<a href="tel:88003766688" class="header-contacts__phone">8 (800) 376-66-88</a>
+						<a href="#contact-popup" class="header-contacts__more js-popup-medium">Ещё контакты</a>
+					</div>    
+				</div>
+			</div>
+		</header><!-- HEADER [END] -->
+		
+

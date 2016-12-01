@@ -259,6 +259,20 @@ select {
 				top: 2px;
 			}
 		}
+		&--red {
+			color: $white;
+			font: 700 15px $font;
+			fill: $white;
+			background: $red1;
+			border-color: transparent;
+	    padding: 10px 20px 12px;
+			&:hover {
+				background: $white;
+				border-color: $red1;
+				color: $red1;
+				fill: $red1;
+			}
+		}
 	}
 
 

@@ -1,0 +1,42 @@
+{
+  "name": "dev",
+  "version": "0.0.6",
+  "description": "dev",
+  "author": "dev",
+  "license": "bsd-2clause",
+  "dependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.8.11",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-imagemin": "^2.2.1",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sourcemaps": "^1.5.0",
+    "gulp-uglify": "^1.1.0",
+    "imagemin-pngquant": "^4.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.9.6",
+    "clone": "^1.0.2",
+    "event-stream": "^3.3.1",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-changed": "^1.2.1",
+    "gulp-cssnano": "^2.1.1",
+    "gulp-file-include": "^1.0.0",
+    "gulp-filesize": "0.0.6",
+    "gulp-gm": "0.0.8",
+    "gulp-group-css-media-queries": "^1.1.0",
+    "gulp-image-resize": "^0.6.0",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-prettify": "^0.4.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.1",
+    "gulp-svg-sprite": "^1.2.19",
+    "gulp.spritesmith": "^3.6.1",
+    "html": "0.0.10",
+    "run-sequence": "^1.1.5",
+    "spritesheet-templates": "^9.5.0"
+  }
+}
