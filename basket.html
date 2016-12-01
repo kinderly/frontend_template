@@ -2003,114 +2003,230 @@
 		
 
 
-
-	<main class="content text-page">
-
-		<div class="breadcrumb">
-			<ul class="breadcrumb__list">                        
-				<li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Главная</a></li>
-				<li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Бренды </a></li>
-				<li class="breadcrumb__item"><span href="#" class="breadcrumb__link breadcrumb__link--active">Mayoral</span></li>
-			</ul>
+	<main class="content main-page">
+		
+		<div class="basket">
+			<h1 class="basket__title">Корзина товаров</h1>
+			<div class="basket-table">
+				<div class="basket-table__thead">
+					<div class="basket-table__row basket-table__row--thead">
+						<div class="basket-table__cell basket-table__cell--thead">
+							<span class="basket-table__thead-text">Товар</span>
+						</div>
+						<div class="basket-table__box">
+							<div class="basket-table__cell basket-table__cell--thead"></div>
+							<div class="basket-table__cell basket-table__cell--thead">
+								<span class="basket-table__thead-text">Цена</span>
+							</div>
+							<div class="basket-table__cell basket-table__cell--thead">
+								<span class="basket-table__thead-text">Накоп. скидка</span>
+							</div>
+							<div class="basket-table__cell basket-table__cell--thead">
+								<span class="basket-table__thead-text">Итого</span>
+							</div>
+							<div class="basket-table__cell basket-table__cell--thead"></div>
+						</div>
+					</div>
+				</div>
+				<div class="basket-table__tbody">
+					<div class="basket-table__row basket-table__row--tbody">
+						<div class="basket-table__cell">
+							<div class="basket-table__image">
+								<img class="basket-table__img" src="pic/cart/cart-01.jpg" alt="">
+							</div>
+						</div>
+						<div class="basket-table__box">
+							<div class="basket-table__cell">
+								<h3 class="basket-table__title">Mayoral, комплект для девочки: топ и леггинсы </h3>
+								<span class="basket-table__code">Артикул: <span>SS-SSFSG-628-23060-200</span></span>
+								<span class="basket-table__size">Размер: 128</span>
+								<div class="basket-table__amount">
+									<span class="basket-table__amount-text"><span class="basket-table__amount-text-desctop">Количество:</span><span class="basket-table__amount-text-mobile">Кол-во:</span></span>
+									<span class="default-select">
+										<select name="Select" id="" class="basket-table__amount-select">
+											<option value="">1</option>
+											<option value="">2</option>
+											<option value="">3</option>
+										</select>
+										<svg class="default-select__ico">
+											<use xlink:href="#arow-down"></use>
+										</svg>
+									</span>
+								</div>
+							</div>
+							<div class="basket-table__cell">
+								<span class="basket-table__price">4 630 руб</span>
+								<span class="basket-table__share">Скидка 20%</span>
+								<span class="basket-table__price basket-table__price--old">2 800 руб</span>
+							</div>
+							<div class="basket-table__cell">
+								<span class="basket-table__accumulative-share">10%</span>
+								<span class="basket-table__accumulative-val">- 463 руб</span>
+							</div>
+							<div class="basket-table__cell">
+								<span class="basket-table__allPrice">12 500 руб</span>
+							</div>
+							<div class="basket-table__cell">
+								<a href="#" class="basket-table__remove">
+									<svg class="basket-table__remove-ico close-modal-ico">
+										<use xlink:href="#close-modal"></use>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="basket-table__row basket-table__row--tbody">
+						<div class="basket-table__cell">
+							<div class="basket-table__image">
+								<img class="basket-table__img" src="pic/cart/cart-02.jpg" alt="">
+							</div>
+						</div>
+						<div class="basket-table__box">
+							<div class="basket-table__cell">
+								<h3 class="basket-table__title">Mayoral, комплект для девочки: топ и леггинсы </h3>
+								<span class="basket-table__code">Артикул: <span>SS-SSFSG-628-23060-200</span></span>
+								<span class="basket-table__size">Размер: 128</span>
+								<div class="basket-table__amount">
+									<span class="basket-table__amount-text"><span class="basket-table__amount-text-desctop">Количество:</span><span class="basket-table__amount-text-mobile">Кол-во:</span></span>
+									<span class="default-select">
+										<select name="Select" id="" class="basket-table__amount-select">
+											<option value="">1</option>
+											<option value="">2</option>
+											<option value="">3</option>
+										</select>
+										<svg class="default-select__ico">
+											<use xlink:href="#arow-down"></use>
+										</svg>
+									</span>
+								</div>
+							</div>
+							<div class="basket-table__cell">
+								<span class="basket-table__price">4 630 руб</span>
+								<span class="basket-table__share">Скидка 20%</span>
+								<span class="basket-table__price basket-table__price--old">2 800 руб</span>
+							</div>
+							<div class="basket-table__cell">
+								<span class="basket-table__accumulative-share">10%</span>
+								<span class="basket-table__accumulative-val">- 463 руб</span>
+							</div>
+							<div class="basket-table__cell">
+								<span class="basket-table__allPrice">12 500 руб</span>
+							</div>
+							<div class="basket-table__cell">
+								<a href="#" class="basket-table__remove">
+									<svg class="basket-table__remove-ico close-modal-ico">
+										<use xlink:href="#close-modal"></use>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="basket-order">
+				<div class="basket-coupon">
+					<span class="basket-coupon__open" data-drop="sendCoupon">У вас есть купон на скидку?</span>
+					<div class="basket-coupon__drop" data-drop="registration">
+						<span class="basket-coupon__text">Применять купоны могут только зарегистрированные покупатели</span>
+						<div class="basket-coupon__buttons">
+							<a href="#" class="btn btn--green basket-coupon__btn basket-coupon__btn--enter">Вход</a>
+							<a href="#" class="btn btn--green basket-coupon__btn basket-coupon__btn--registration">Регистрация</a>
+						</div>
+					</div>
+					<div class="basket-coupon__drop" data-drop="sendCoupon">
+						<input type="text" placeholder="Введите купон" class="input input--border basket-coupon__input">
+						<a href="#" class="btn btn--gray2 basket-coupon__submit">Применить</a>
+					</div>
+				</div>
+				<div class="basket-checkout">
+					<div class="basket-checkout__desctop">
+						<span class="basket-checkout__title">Всего:  4 товара на 12 500 руб (без доставки)</span>
+						<span class="basket-checkout__text">Без скидок: 13 800 руб, скидки на 1620 руб</span>
+					</div>
+					<div class="basket-checkout__mob">
+						<div class="basket-checkout__mob-row basket-checkout__mob-row--big">
+							<span class="basket-checkout__mob-name basket-checkout__mob-name--big">Всего:</span>
+							<span class="basket-checkout__mob-val basket-checkout__mob-val--big">2 товара на 14 360 руб (без доставки)</span>
+						</div>
+						<div class="basket-checkout__mob-row">
+							<span class="basket-checkout__mob-name">Без скидок:</span>
+							<span class="basket-checkout__mob-val">13 800 руб</span>
+						</div>
+						<div class="basket-checkout__mob-row">
+							<span class="basket-checkout__mob-name">Скидки на:</span>
+							<span class="basket-checkout__mob-val">1620 руб</span>
+						</div>
+					</div>
+					<a href="#" class="btn btn--red basket-checkout__link">
+						<svg class="btn__ico basket-confirm-min-ico">
+							<use xlink:href="#basket-confirm"></use>
+						</svg>
+						<span class="btn__text">Оформить</span>
+					</a>
+				</div>
+			</div>
+			<div class="basket-delivery">
+				<div class="basket-delivery__top">
+					<div class="basket-delivery__top-right">
+						<div class="basket-delivery__list-left">
+							<svg class="basket-delivery__list-ico delivery-time-ico">
+								<use xlink:href="#delivery-time"></use>
+							</svg>
+							<span class="basket-delivery__list-text">Заказ может быть передан в доставку 12 или 13 сентября. </span>
+						</div>
+						<span class="basket-delivery__list-mob-text">Дату доставки вы сможете уточнить при оформлении и дальнейшем подтверждении службой поддержки клиентов.</span>
+					</div>
+					<span class="basket-delivery__title">
+						<svg class="basket-delivery__title-ico map-red-ico">
+							<use xlink:href="#map-red"></use>
+						</svg>
+						<span class="basket-delivery__title-text">Верхнемамоновский район</span>
+					</span>
+				</div>
+				<ul class="basket-delivery__list">
+					<li class="basket-delivery__list-item basket-delivery__list-item--tk">
+						<div class="basket-delivery__list-left">
+							<svg class="basket-delivery__list-ico delivery-tk-ico">
+								<use xlink:href="#delivery-tk"></use>
+							</svg>
+							<span class="basket-delivery__list-ico-text">ТК ПЭК</span>
+							<span class="basket-delivery__list-mob-text">490 руб <span>/</span> 16 дней</span>
+						</div>
+						<div class="basket-delivery__list-right">
+							<span class="basket-delivery__list-title">490 руб <span>/</span> 16 дней</span>
+							<span class="basket-delivery__list-text">Примерная стоимость доставки рассчитана по тарифам ТК "ПЭК". Точную стоимость доставки уточняйте в ТК.</span>
+						</div>
+					</li>
+					<li class="basket-delivery__list-item basket-delivery__list-item--ems">
+						<div class="basket-delivery__list-left">
+							<svg class="basket-delivery__list-ico delivery-ems-ico">
+								<use xlink:href="#delivery-ems"></use>
+							</svg>
+							<span class="basket-delivery__list-ico-text">EMS</span>
+							<span class="basket-delivery__list-mob-text">490 руб <span>/</span> 16 дней</span>
+						</div>
+						<div class="basket-delivery__list-right">
+							<span class="basket-delivery__list-title">490 руб <span>/</span> 16 дней</span>
+							<span class="basket-delivery__list-text">Примерная стоимость доставки рассчитана по тарифам ТК "ПЭК". Точную стоимость доставки уточняйте в ТК.</span>
+						</div>
+					</li>
+					<li class="basket-delivery__list-item basket-delivery__list-item--time">
+						<div class="basket-delivery__list-left">
+							<svg class="basket-delivery__list-ico delivery-time-ico">
+								<use xlink:href="#delivery-time"></use>
+							</svg>
+						</div>
+						<div class="basket-delivery__list-right">
+							<span class="basket-delivery__list-title">490 руб <span>/</span> 16 дней</span>
+							<span class="basket-delivery__list-text">Примерная стоимость доставки рассчитана по тарифам ТК "ПЭК". Точную стоимость доставки уточняйте в ТК.</span>
+						</div>
+					</li>
+					
+				</ul>
+			</div>
 		</div>
 
-		<div class="text-page__container">
-			<h1 class="content__title">Кредит</h1>
-			<div class="text-page__box">
-				<ul class="method__list">
-					<li class="method__list-item">
-						<a class="method__list-link" href="#">Доставка</a>
-						<span class="method__list-line">-</span>
-					</li>
-					<li class="method__list-item">
-						<a class="method__list-link" href="#">Способы оплаты</a>
-						<span class="method__list-line">-</span>
-					</li>
-					<li class="method__list-item">
-						<a class="method__list-link" href="#">Кредит</a>
-						<span class="method__list-line">-</span>
-					</li>
-					<li class="method__list-item">
-						<a class="method__list-link" href="#">Гарантия</a>
-						<span class="method__list-line">-</span>
-					</li>
-				</ul>  
-				<p>Мы знаем, насколько важно для вас купить именно то, что вам нравится. Поэтому предлагаем различные способы оплаты, в том числе покупку в кредит на выгодных условиях.</p>
-				<h2>Демисезонная детская обувь</h2>
-				<h3>Как выбрать детскую обувь на демисезон</h3>
-				<p>Чтобы сделать правильный выбор и угодить малышу, следуйте нескольким простым правилам. А благодаря нашему обзору вы также узнаете, какие модели современной демисезонной обуви сейчас наиболее популярны.</p>
-				<p>Детская демисезонная обувь должна отвечать следующим требованиям:</p>
-				
-				<div class="static-content">
-					<ul>
-						<li>Удобство и комфорт носки.</li>
-						<li>Обувь должна не пропускать влагу.</li>
-						<li>Надёжная защита от холода, но одновременно ботинки должны «дышать», чтобы не допустить перегрева и опрелостей.</li>
-						<li>Максимально устойчивая подошва против скольжения.</li>
-						<li>Обувь должна нравиться малышу.</li>
-					</ul>
-				</div>
-				<div class="banks">
-					<h2>Программы и банки, с которыми мы работаем</h2>
-					<ul class="banks__list">
-						<li class="banks__list-item">
-							<img class="banks__list-img" src="pic/banks/banks-01.jpg" alt="">
-						</li>
-						<li class="banks__list-item">
-							<img class="banks__list-img" src="pic/banks/banks-01.jpg" alt="">
-						</li>
-						<li class="banks__list-item">
-							<img class="banks__list-img" src="pic/banks/banks-01.jpg" alt="">
-						</li>
-						<li class="banks__list-item">
-							<img class="banks__list-img" src="pic/banks/banks-01.jpg" alt="">
-						</li>
-					</ul>
- 				</div>
- 				<div class="advantages">
- 					<h2>Преимущества покупки в кредит</h2>
- 					<ul class="advantages__list">
- 						<li class="advantages__list-item">
- 							<div class="advantages__list-box">
-	 							<svg class="advantages__list-ico shopping-bag-timeout-ico">
-	 								<use xlink:href="#shopping-bag-timeout"></use>
-	 							</svg>
-	 						</div>
- 							<span class="advantages__list-text">Возможность не откладывать покупку на завтра</span>
- 						</li>
- 						<li class="advantages__list-item">
- 							<div class="advantages__list-box">
-	 							<svg class="advantages__list-ico calendar-heart-ico">
-	 								<use xlink:href="#calendar-heart"></use>
-	 							</svg>
-	 						</div>
- 							<span class="advantages__list-text">Оплата товара в удобный для вас срок</span>
- 						</li>
- 						<li class="advantages__list-item">
- 							<div class="advantages__list-box">
-	 							<svg class="advantages__list-ico auction-ico">
-	 								<use xlink:href="#auction"></use>
-	 							</svg>
-	 						</div>	
- 							<span class="advantages__list-text">Возможность приобрести товар без первоначального взноса</span>
- 						</li>
- 						<li class="advantages__list-item">
- 							<div class="advantages__list-box">
-	 							<svg class="advantages__list-ico bank-note-fire-ico">
-	 								<use xlink:href="#bank-note-fire"></use>
-	 							</svg>
- 							</div>
- 							<span class="advantages__list-text">Досрочное погашение кредита без комиссии</span>
- 						</li>
- 					</ul>
- 				</div>
-
-
-			</div>
-		</div>                    
-
 	</main><!-- MAIN CONTENT [END] -->
-
 
 	</div><!-- FOOTER FIX [END] -->
 

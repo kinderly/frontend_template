@@ -11,6 +11,28 @@ $icon-home: x y offset_x offset_y width height total_width total_height image_pa
 At the bottom of this section, we provide information about the spritesheet itself
 $spritesheet: width height image $spritesheet-sprites;
 */
+$arrow-bottom-name: 'arrow-bottom';
+$arrow-bottom-x: 44px;
+$arrow-bottom-y: 30px;
+$arrow-bottom-offset-x: -44px;
+$arrow-bottom-offset-y: -30px;
+$arrow-bottom-width: 10px;
+$arrow-bottom-height: 8px;
+$arrow-bottom-total-width: 56px;
+$arrow-bottom-total-height: 65px;
+$arrow-bottom-image: '../img/sprite.png';
+$arrow-bottom: (44px, 30px, -44px, -30px, 10px, 8px, 56px, 65px, '../img/sprite.png', 'arrow-bottom', );
+$arrow-right-name: 'arrow-right';
+$arrow-right-x: 44px;
+$arrow-right-y: 14px;
+$arrow-right-offset-x: -44px;
+$arrow-right-offset-y: -14px;
+$arrow-right-width: 9px;
+$arrow-right-height: 11px;
+$arrow-right-total-width: 56px;
+$arrow-right-total-height: 65px;
+$arrow-right-image: '../img/sprite.png';
+$arrow-right: (44px, 14px, -44px, -14px, 9px, 11px, 56px, 65px, '../img/sprite.png', 'arrow-right', );
 $arrow-name: 'arrow';
 $arrow-x: 0px;
 $arrow-y: 0px;
@@ -33,6 +55,28 @@ $check-total-width: 56px;
 $check-total-height: 65px;
 $check-image: '../img/sprite.png';
 $check: (44px, 0px, -44px, 0px, 12px, 9px, 56px, 65px, '../img/sprite.png', 'check', );
+$arrow-bottom-2x-name: 'arrow-bottom_2x';
+$arrow-bottom-2x-x: 88px;
+$arrow-bottom-2x-y: 60px;
+$arrow-bottom-2x-offset-x: -88px;
+$arrow-bottom-2x-offset-y: -60px;
+$arrow-bottom-2x-width: 20px;
+$arrow-bottom-2x-height: 16px;
+$arrow-bottom-2x-total-width: 112px;
+$arrow-bottom-2x-total-height: 130px;
+$arrow-bottom-2x-image: '../img/sprite@2x.png';
+$arrow-bottom-2x: (88px, 60px, -88px, -60px, 20px, 16px, 112px, 130px, '../img/sprite@2x.png', 'arrow-bottom_2x', );
+$arrow-right-2x-name: 'arrow-right_2x';
+$arrow-right-2x-x: 88px;
+$arrow-right-2x-y: 28px;
+$arrow-right-2x-offset-x: -88px;
+$arrow-right-2x-offset-y: -28px;
+$arrow-right-2x-width: 18px;
+$arrow-right-2x-height: 22px;
+$arrow-right-2x-total-width: 112px;
+$arrow-right-2x-total-height: 130px;
+$arrow-right-2x-image: '../img/sprite@2x.png';
+$arrow-right-2x: (88px, 28px, -88px, -28px, 18px, 22px, 112px, 130px, '../img/sprite@2x.png', 'arrow-right_2x', );
 $arrow-2x-name: 'arrow_2x';
 $arrow-2x-x: 0px;
 $arrow-2x-y: 0px;
@@ -58,12 +102,12 @@ $check-2x: (88px, 0px, -88px, 0px, 24px, 18px, 112px, 130px, '../img/sprite@2x.p
 $spritesheet-width: 56px;
 $spritesheet-height: 65px;
 $spritesheet-image: '../img/sprite.png';
-$spritesheet-sprites: ($arrow, $check, );
+$spritesheet-sprites: ($arrow-bottom, $arrow-right, $arrow, $check, );
 $spritesheet: (56px, 65px, '../img/sprite.png', $spritesheet-sprites, );
 $retina-spritesheet-width: 112px;
 $retina-spritesheet-height: 130px;
 $retina-spritesheet-image: '../img/sprite@2x.png';
-$retina-spritesheet-sprites: ($arrow-2x, $check-2x, );
+$retina-spritesheet-sprites: ($arrow-bottom-2x, $arrow-right-2x, $arrow-2x, $check-2x, );
 $retina-spritesheet: (112px, 130px, '../img/sprite@2x.png', $retina-spritesheet-sprites, );
 
 /*
@@ -71,11 +115,15 @@ These "retina group" variables are mappings for the naming and pairing of normal
 
 The list formatted variables are intended for mixins like `retina-sprite` and `retina-sprites`.
 */
+$arrow-bottom-group-name: 'arrow-bottom';
+$arrow-bottom-group: ('arrow-bottom', $arrow-bottom, $arrow-bottom-2x, );
+$arrow-right-group-name: 'arrow-right';
+$arrow-right-group: ('arrow-right', $arrow-right, $arrow-right-2x, );
 $arrow-group-name: 'arrow';
 $arrow-group: ('arrow', $arrow, $arrow-2x, );
 $check-group-name: 'check';
 $check-group: ('check', $check, $check-2x, );
-$retina-groups: ($arrow-group, $check-group, );
+$retina-groups: ($arrow-bottom-group, $arrow-right-group, $arrow-group, $check-group, );
 
 /*
 The provided mixins are intended to be used with the array-like variables
