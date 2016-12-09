@@ -1370,6 +1370,147 @@ var basketPage = (function() {
 	}
 }())
 /* basket page end */
+
+/* landingPageFn */
+function landingPageFn(){
+	
+	// SLIDERS
+	if ( $('.js-recently-purchased-slider').length ){
+		$('.js-recently-purchased-slider').slick({
+			slidesToShow: 5,
+			slidesToScroll: 5,
+			dots: false,
+			arrows: true,
+			adaptiveHeight: true,
+			prevArrow: '<a href="#" class="arrow arrow--left"><i class="ico icon-angle-left"></i></a>',
+			nextArrow: '<a href="#" class="arrow arrow--right"><i class="ico icon-angle-right"></i></a>',
+			responsive: [
+			    {
+			      breakpoint: 1300,
+			      settings: {
+		         	slidesToShow: 4,
+					slidesToScroll: 4,
+			      }
+			    },
+			     {
+			      breakpoint: 1100,
+			      settings: {
+		         	slidesToShow: 3,
+					slidesToScroll: 3,
+			      }
+			    },
+			     {
+			      breakpoint: 768,
+			      settings: {
+		         	slidesToShow: 1,
+					slidesToScroll: 1,
+					dots: true,
+					arrows: false
+			      }
+			    }
+			]
+		});
+	}
+
+	if ( $('.js-popular-brands-slider').length ){
+		var popular_brands_array = [];
+		$('.popular-brands-list__item').each(function(){
+			var cur = $(this).html();
+			popular_brands_array.push(cur);
+		});
+
+		var popular_brands_array_length = popular_brands_array.length;
+
+		// init
+		if ( $('.landing-mobile-res').is(':visible') ){
+			$('.popular-brands-slider-wrap').addClass('popular-brands-slider-wrap--active');
+			$('.popular-brands-slider').html('');
+
+			$.each(popular_brands_array,function(i){
+				$('.popular-brands-slider').append('<li class="popular-brands-slider__item">'+popular_brands_array[i]+'</li>');
+			});
+
+			$('.js-popular-brands-slider').slick({
+				slidesToShow: 1,
+				  centerMode: true,
+				  variableWidth: true,
+				dots: false,
+				arrows: false,
+				adaptiveHeight: true
+			});
+		} else {
+			$('.js-popular-brands-slider').slick({
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				dots: false,
+				arrows: true,
+				adaptiveHeight: true,
+				prevArrow: '<a href="#" class="arrow arrow--left"><i class="ico icon-angle-left"></i></a>',
+				nextArrow: '<a href="#" class="arrow arrow--right"><i class="ico icon-angle-right"></i></a>'
+			});
+		}
+
+		// resize
+		$(window).resize(function(){
+			if ( $('.landing-mobile-res').is(':visible') ){
+				if ( !$('.popular-brands-slider-wrap').hasClass('popular-brands-slider-wrap--active') ){
+					$('.popular-brands-slider-wrap').addClass('popular-brands-slider-wrap--active');
+					$('.popular-brands-slider').slick('unslick');
+					$('.popular-brands-slider').html('');
+
+					$.each(popular_brands_array,function(i){
+						$('.popular-brands-slider').append('<li class="popular-brands-slider__item">'+popular_brands_array[i]+'</li>');
+					});
+
+					$('.js-popular-brands-slider').slick({
+						slidesToShow: 1,
+						  centerMode: true,
+						  variableWidth: true,
+						dots: false,
+						arrows: false,
+						adaptiveHeight: true
+					});
+				}
+			} else {
+				if ( $('.popular-brands-slider-wrap').hasClass('popular-brands-slider-wrap--active') ){
+					$('.popular-brands-slider-wrap').removeClass('popular-brands-slider-wrap--active');
+					$('.popular-brands-slider').slick('unslick');
+					$('.popular-brands-slider').html('');
+
+					var str = '<div class="popular-brands-slider__item"><ul class="popular-brands-list">';
+
+					for(var i = 1;i<=popular_brands_array_length;i++){
+						str += '<li class="popular-brands-list__item">'+popular_brands_array[i-1]+'</li>';
+
+						if ( i % 15 == 0 ){
+							str += '</ul></div>';
+
+							if ( i != popular_brands_array.length ){
+								str += '<div class="popular-brands-slider__item"><ul class="popular-brands-list">';	
+							}
+						}
+					}
+
+					$('.popular-brands-slider').html(str);
+
+					$('.js-popular-brands-slider').slick({
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						dots: false,
+						arrows: true,
+						adaptiveHeight: true,
+						prevArrow: '<a href="#" class="arrow arrow--left"><i class="ico icon-angle-left"></i></a>',
+						nextArrow: '<a href="#" class="arrow arrow--right"><i class="ico icon-angle-right"></i></a>'
+					});
+				}
+			}
+		});
+	}
+}
+/* landingPageFn end */
+
+
+
 $(document).on('ready', function() {
 
 	ajaxSend( $('#modal-onlyReg__form'), $('#modal-thx'), '640px' );
@@ -1387,6 +1528,7 @@ $(document).on('ready', function() {
 	autocompleteDelivery();
 
 	productFullFn();
+	landingPageFn();
 	tooltips();
 
 	headerComponent.init();
@@ -1535,7 +1677,7 @@ $(document).on('ready', function() {
 	$('.js-popup-little').fancybox(popup_settings_little);
 
 
-	
+	$('.product__list-item').trigger('mouseenter');
 	
 
 	// close popups

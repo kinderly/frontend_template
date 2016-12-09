@@ -1,4 +1,4 @@
-/* Start breadcrumb list */
+/*Start breadcrumb list */
 .breadcrumb {
 
 	&__list {
@@ -1815,12 +1815,12 @@
 		display: inline-block;
 		vertical-align: top;
 		width: 20%;
-		padding: 29px 25px 19px;
+		padding: 29px 0 19px 25px;
 		text-align: left;
 		@include clearfix;
 		position: relative;
 		&:nth-child(5n) {
-			z-index: 100;
+			//z-index: 100;
 			&:before {
 				@include before-img(5000px, 1px);
 				left: -2500px;
@@ -1830,7 +1830,7 @@
 			}
 		}
 		&:last-child {
-			z-index: 100;
+			//z-index: 100;
 			&:before {
 				@include before-img(5000px, 1px);
 				left: -2500px;
@@ -1870,12 +1870,21 @@
 				left: 0;
 				right: auto;
 				float: left;
+				padding: 30px 0 0 25px;
 			}
 			.product__list-right {
 				float: left;
+				padding-left: 0;
+				padding-right: 10px;
+				@include b(tablet) {
+					padding-right: 0;
+				}
 			}
 			.product__list-left {
 				right: 25px;
+				@include b(1400) {
+					right: 15px;
+				}
 			}
 			.product__list-sticker {
 				left: 25px;
@@ -1891,13 +1900,13 @@
 		@include b(1300) {
 			width: 25%;
 			&:nth-child(5n) {
-				z-index: 0;
+				//z-index: 0;
 				&:before {
 					display: none;
 				}
 			}
 			&:nth-child(4n) {
-				z-index: 100;
+				//z-index: 100;
 				&:before {
 					@include before-img(5000px, 1px);
 					left: -2500px;
@@ -1907,7 +1916,7 @@
 				}
 			}
 			&:last-child {
-				z-index: 100;
+				//z-index: 100;
 				&:before {
 					@include before-img(5000px, 1px);
 					left: -2500px;
@@ -1920,13 +1929,13 @@
 		@include b(1180) {
 			width: 33.33%;
 			&:nth-child(4n) {
-				z-index: 0;
+				//z-index: 0;
 				&:before {
 					display: none;
 				}
 			}
 			&:nth-child(3n) {
-				z-index: 100;
+				//z-index: 100;
 				&:before {
 					@include before-img(5000px, 1px);
 					left: -2500px;
@@ -1936,7 +1945,7 @@
 				}
 			}
 			&:last-child {
-				z-index: 100;
+				//z-index: 100;
 				&:before {
 					@include before-img(5000px, 1px);
 					left: -2500px;
@@ -1954,7 +1963,7 @@
 			border-bottom: 1px solid $gray2;
 			padding: 36px 25px 20px;
 			&:nth-child(1n) {
-				z-index: 0;
+				//z-index: 0;
 				&:before {
 					display: none;
 				}
@@ -2036,10 +2045,12 @@
 
 	&-left {
 		position: absolute;
-		width: 95px;
+		width: 120px;
 		display: none;
+		padding-left: 25px;
 		@include b(1400) {
 			width: 85px;
+			padding-left: 15px;
 		}
 		@include b(tablet) {
 			display: none;
@@ -2048,19 +2059,21 @@
 
 	&-right {
 		float: right;
-		width: calc(100% - 150px);
-		@incldue b(1400) {
-			width: calc(100% - 100px);
+		width: calc(100% - 120px);
+		padding-left: 10px;
+		@include b(1400) {
+			width: calc(100% - 85px);
 		}
 		@include b(tablet) {
 			width: auto;
 			float: none;
+			padding: 0;
 		}
 	}
 	
 	&-box {
-		padding: 0 25px;
-		width: calc(100% + 150px);
+		padding: 0 25px 0 0;
+		width: calc(100% + 120px);
 		float: right;
 		border: 1px solid transparent;
 		padding-top: 30px;
@@ -2068,7 +2081,7 @@
 		position: relative;
 		height: 100%;
 		@include b(1400) {
-			width: calc(100% + 170px);
+			width: calc(100% + 85px);
 		}
 		@include b(tablet) {
 			position: static;
