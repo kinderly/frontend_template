@@ -1,6 +1,15 @@
 //----------------------------------------------------//
 // Mixins & Includes                                  //
 //----------------------------------------------------//
+.rlist {
+	font-size: 0;
+	line-height: 0;
+}
+.ulist {
+	font-size: $mainFontSize;
+	line-height: $mainFontHeight;
+}
+
 @mixin notext {
 	overflow: hidden;
 	text-indent: -9999px;
@@ -71,6 +80,9 @@
  @mixin b($point) {
 	@if $point == desktop {
 		@media (max-width: 1366px) and (min-width:1024px) { @content ; }
+	}
+	@if $point == desktop_sm {
+		@media (max-width: 1366px) { @content ; }
 	}
 	@else if $point == tablet {
 		@media (max-width: 1023px) { @content ; }
