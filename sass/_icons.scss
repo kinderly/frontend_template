@@ -258,7 +258,7 @@
 	width: 59px;
 	height: 50px;
 	@include b(tablet) {
-		width: 41.3;
+		width: 41.3px;
 		height: 35px;
 	}
 }
@@ -337,4 +337,9 @@
 .plus-ico {
 	width: 12px;
 	height: 12px;
+}
+
+.scrollTop-arrow-ico {
+	width: 10px;
+	height: 7px;
 }

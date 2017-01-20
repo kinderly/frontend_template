@@ -132,6 +132,7 @@ $footerHeight: 242px;
 			left: 0;
 			top: -1px;
 			margin: auto;
+			text-decoration: none;
 			@include b(tablet) {
 				position: static;
 				display: block;
@@ -146,6 +147,8 @@ $footerHeight: 242px;
 			}
 			&:hover {
 				opacity: .6;
+				text-decoration: none;
+				color: $white;
 			}
 		}
 
@@ -153,8 +156,8 @@ $footerHeight: 242px;
 			position: fixed;
 			top: 0;
 			bottom: 0;
-			left: -400px;
-			width: 400px;
+			left: -360px;
+			width: 360px;
 			background: $white;
 			padding: 17px 20px 30px;
 			z-index: 9999;
@@ -174,6 +177,19 @@ $footerHeight: 242px;
 					}
 				}
 			}
+			&.open-submenu {
+				.header-nav__head-left {
+					display: none;
+				}
+				.header-nav__head-submenu {
+					display: block;
+				}
+				.header-nav__head {
+					@include b(tablet) {
+				    border-bottom: 1px solid $gray6;
+					}
+				}
+			}
 			@include b(tablet) {
 				width: 100%;
 				left: -100%;
@@ -187,8 +203,11 @@ $footerHeight: 242px;
     width: 350px;
     border-right: 1px solid $red2;
     position: relative;
+    @include b(desktop) {
+			width: 250px;
+		}
     @include b(1100) {
-    	width: 250px;
+    	width: 200px;
     }
     @include b(tablet) {
     	width: 200px;
@@ -326,6 +345,10 @@ $footerHeight: 242px;
 			padding: 0;
 			fill: $white;
 			z-index: 2;
+			text-decoration: none;
+			&:hover {
+				text-decoration: none;
+			}
 		}
 
 
@@ -358,13 +381,52 @@ $footerHeight: 242px;
 			display: block;
 			height: 50px;
 			line-height: 48px;
-
+			text-decoration: none;
 			&-text {
 				display: inline-block;
 				vertical-align: middle;
 			}
 			&:hover {
 				opacity: .6;
+				text-decoration: none;
+				color: $white;
+			}
+		}
+
+		&--invited {
+			position: relative;
+			.header-login__link-text {
+		    overflow: hidden;
+		    max-width: 110px;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+			}
+			.header-login__ico {
+				margin-right: 40px;
+				top: 1px;
+			}
+		}
+
+		&__box {
+			position: relative;
+		}
+
+		&__percent {
+			position: absolute;
+			background: $white;
+			color: $red1;
+			font: 700 11px $font;
+			padding: 3px;
+			text-align: center;
+			display: block;
+			top: 8px;
+			left: 29px;
+			&:before {
+				@include before-img(0,0);
+				border: 5px solid transparent;
+				border-bottom-color: $white;
+				left: -5px;
+				bottom: 2px;
 			}
 		}
 
@@ -410,6 +472,7 @@ $footerHeight: 242px;
 			line-height: 50px;
 			padding: 3px 8px 0;
 			height: 50px;
+			text-decoration: none;
 			&-text {
 				display: inline-block;
 				vertical-align: baseline;
@@ -418,6 +481,8 @@ $footerHeight: 242px;
 			}
 			&:hover {
 				opacity: .6;
+				text-decoration: none;
+				color: $white;
 			}
 		}
 
@@ -448,11 +513,7 @@ $footerHeight: 242px;
 		left: calc(50% - 58.5px);
 		top: calc(50% - 15px);
 		@include b(desktop) {
-			position: relative;
-			left: 0;
-			top: 9px;
-			display: table;
-			margin: 0 auto;
+			
 		}
 		@include b(tablet) {
 			left: calc(50% - 39px);
@@ -463,8 +524,10 @@ $footerHeight: 242px;
 			display: block;
 			fill: $white;
 			border: 0;
+			text-decoration: none;
 			&:hover {
 				fill: $red3;
+				text-decoration: none;
 			}
 			@include b(tablet) {
 				padding: 15px 20px;
@@ -484,8 +547,10 @@ $footerHeight: 242px;
 
 	&-place {
 		border: 0;
+		text-decoration: none;
 		&:hover {
 			transition: all .3s;
+			text-decoration: none;
 			.header-place__city {
 				color: $black;
 			}
@@ -535,8 +600,10 @@ $footerHeight: 242px;
 			display: inline-block;
 			margin-right: 10px;
 			border: 0;
+			text-decoration: none;
 			&:hover {
 				color: $black;
+				text-decoration: none;
 			}
 		}
 
@@ -545,8 +612,10 @@ $footerHeight: 242px;
 			font: 400 13px $font;
 			display: inline-block;
 			border: 0;
+			text-decoration: none;
 			&:hover {
 				color: $gray1;
+				text-decoration: none;
 			}
 		}
 
@@ -567,15 +636,15 @@ $footerHeight: 242px;
 		}
 
 		.modal__close {
-			top: 0;
-			right: 0;
+			top: -20px;
+			right: -20px;
 			&-ico {
 				width: 12px;
 				height: 12px;
 			}
 			@include b(tablet) {
-				top: 17px;
-				display: none;
+				top: 0;
+				padding: 18px;
 			}
 		}
 
@@ -597,20 +666,17 @@ $footerHeight: 242px;
 			margin: 0 -20px;
 			padding: 0 20px 16px;
 			@include b(tablet) {
-				display: none;
+				padding-top: 16px;
+				border: 0;
 			}
 			
 			&-left {
 				display: inline-block;
 				vertical-align: middle;
-				border-right: 1px solid $gray2;
 				padding-right: 14px;
-			}
-
-			&-right {
-				display: inline-block;
-				vertical-align: middle;
-				padding-left: 11px;
+				@include b(tablet) {
+					display: none;
+				}
 			}
 
 			&-ico {
@@ -631,62 +697,104 @@ $footerHeight: 242px;
 				text-transform: uppercase;
 			}
 
-			&-title {
-				color: $gray1;
-				font: 400 14px $font;
-				display: block;
+			&-submenu {
+				display: none;
+				&-link {
+					color: $gray1;
+					font: 100 12px/1 $font;
+					text-transform: uppercase;
+					border: 0;
+					fill: $gray4;
+					display: table;
+					padding: 10px;
+					margin: 0 0 -20px -10px;
+					position: relative;
+					top: -10px;
+					text-decoration: none;
+					&:hover {
+						color: $red1;
+						text-decoration: none;
+					}
+				} 
+				&-ico {
+					display: inline-block;
+					vertical-align: middle;
+					fill: inherit;
+					margin-right: 20px;
+					width: 16px;
+					height: 16px
+				}
+				&-text  {
+					display: inline-block;
+					vertical-align: middle;
+				}
+
 			}
 
 		}
 
 		&__navigation {
-			height: 100px;
-			display: table;
-			width: 100%;
 			position: relative;
-			&:before {
-				@include before-img(calc(100% + 40px), 1px);
-				left: -20px;
-				bottom: 0;
-				background: $gray6;
+			margin: 0 -20px;
+			padding-top: 10px;
+			transition: all .3s;
+			display: block;
+			&.open {
+				transition: all .3s;
+				position: absolute;
+				opacity: 0;
+				visibility: hidden;
+				display: none;
 			}
-			@include b(tablet) {
-				height: 70px;
-			}
+
 			&-link {
-				display: table-cell;
-				vertical-align: middle;
+				display: block;
 				fill: $gray3;
 				border: 0;
-				width: 33.33%;
-				&--active {
-					fill: $red1;
-				}
+				color: $gray1;
+				font: 400 0px/74px $font;
+				padding: 0 20px;
+				height: 80px;
+				text-decoration: none;
 				&:hover {
 					background: $white1;
+					fill: $red1;
+					text-decoration: none;
 				}
 			}
 
 			&-ico {
-				display: block;
+				display: inline-block;
+				vertical-align: middle;
 				fill: inherit;
-				margin: 0 auto;
+				&-box {
+					width: 80px;
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+
+			&-text {
+				display: inline-block;
+				vertical-align: middle;
+				width: calc(100% - 80px);
+				font-size: 14px;
 			}
 
 		}
 
-		&__list {
+		&__content {
 			line-height: 1;
 			margin: 0 -20px;
 			position: relative;
-			padding: 16px 0 16px 0;
+			// padding: 0 0 16px 0;
 			visibility: hidden;
 			opacity: 0;
 			transition: right .5s;
-			position: relative;
 			position: absolute;
 			top: 150px;
-			right: -100%;
+			right: 0;
+			display: none;
 			&.active {
 				visibility: visible;
 				position: relative;
@@ -694,7 +802,45 @@ $footerHeight: 242px;
 				right: 0;
 				top: 0;
 				transition: right .5s;
+				display: block;
 			}
+			&--top-buble {
+
+			}
+			&--bottom-buble {
+				min-height: 100%;
+				padding-bottom: 130px;
+			}
+			&-top {
+				border-bottom: 1px solid $gray6;
+				overflow: hidden;
+				padding: 16px 20px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+			&-title {
+				color: $gray1;
+				font: 400 14px $font;
+				float: left;
+				padding-right: 15px;
+			}
+			&-all {
+				font: 400 13px $font;
+				color: $gray3;
+				float: right;
+				padding-left: 15px;
+				border: 0;
+				text-decoration: none;
+				&:hover {
+					color: $gray1;
+					text-decoration: none;
+				}
+			}
+		}
+
+		&__list {
+			padding: 10px 0 16px;
 
 			&-item {
 			}
@@ -706,11 +852,18 @@ $footerHeight: 242px;
 				fill: $gray10;
 				display: block;
 				position: relative;
-				padding: 8px 20px;
-				height: 40px;
+				padding: 10px 20px 11px;
+				text-decoration: none;
 				&:hover {
 					background: $white1;
 					fill: $red1;
+					text-decoration: none;
+				}
+				&.active {
+					transition: all .3s;
+					.header-nav__list-sub-ico {
+						transform: rotate(-90deg);
+					}
 				}
 			}
 
@@ -718,12 +871,14 @@ $footerHeight: 242px;
 				fill: inherit;
 				display: inline-block;
 				vertical-align: middle;
+				
 			}
 
 			&-text {
 				padding-left: 10px;
 				display: inline-block;
 				vertical-align: middle;
+				width: calc(100% - 50px);
 			}
 
 			&-sub-ico {
@@ -733,30 +888,19 @@ $footerHeight: 242px;
 				width: 6px;
 				height: 10px;
 				fill: $gray10;
+				transition: all .3s;
+				transform: rotate(90deg);
 			}
 
 		}
 
 		&-submenu {
-			position: absolute;
-			top: 0;
-			right: -100%;
-			width: 100%;
-			bottom: 0;
 			background: $white;
-			z-index: 10;
-			visibility: hidden;
-			transition: all .3s;
-			&.active {
-				visibility: visible;
-				right: 0;
-				transition: all .3s;
-			}
 			&__box {
 				overflow: hidden;
 			}
 			&__top {
-				padding: 19px 28px 13px;
+				padding: 13px 20px 4px 70px;
 			}
 			&__ico {
 				fill: $gray10;
@@ -766,9 +910,14 @@ $footerHeight: 242px;
 			&__title {
 				display: inline-block;
 				vertical-align: middle;
-				color: $gray1;
-				font: 400 14px  $font;
-				padding-left: 20px;
+				color: $gray3;
+				font: 400 13px  $font;
+				border: 0;
+				text-decoration: none;
+				&:hover {
+					color: $gray1;
+					text-decoration: none;
+				}
 			}
 			&__back {
 				padding: 0 20px;
@@ -782,8 +931,10 @@ $footerHeight: 242px;
 					line-height: 40px;
 					margin: 0 0 0 -20px;
 					padding: 0 0 0 20px;
+					text-decoration: none;
 					&:hover {
 						opacity: .6;
+						text-decoration: none;
 					}
 				}
 				&-ico {
@@ -812,57 +963,43 @@ $footerHeight: 242px;
 				margin: 0 -20px 0 0;
 				padding: 0 20px 0 0;
 				text-align: right;
+				text-decoration: none;
     		&:hover {
     			opacity: .6;
+    			text-decoration: none;
     		}
 			}
 			&__list {
-				padding: 3px 41px 20px;
+				padding: 3px 70px 3px;
 				&-item {
 					
 				}
 				&-link {
 					color: $gray1;
-					font: 400 13px/30px $font;
+					font: 400 13px $font;
 					display: block;
 					border: 0;
-					margin: 0 -41px;
-					padding: 0 41px;
-					height: 30px;
+					margin: 0 -70px;
+					padding: 7px 40px 7px 70px;
+					position: relative;
+					text-decoration: none;
 					&:hover {
-						background: $white1;
+						color: $red1;
+						text-decoration: none;
 					}
 					&.active {
-						background: $white1;
+						transition: all .3s;
+						.header-nav__list-sub-ico {
+							transform: rotate(-90deg);
+						}
 					}
 				}
 			}
 		}
 
 		&-submenu2 {
-			display: none;
-
-			&__row {
-				position: relative;
-				margin: 0 -41px;
-    		padding: 11px 40px 9px;
-				&:before {
-					@include before-img(calc(100% - 100px),1px);
-					bottom: 0;
-					background: $gray6;
-					left: 70px;
-				}
-				&:first-child {
-					padding-top: 0;
-				}
-				&:last-child {
-					padding-bottom: 0;
-					&:before {
-						display: none;
-
-					}
-				}
-			}
+			padding: 10px 20px 10px 0;
+			margin-right: -70px;
 			
 			&__list {
 				&-item {
@@ -870,17 +1007,23 @@ $footerHeight: 242px;
 				}
 				&-link {
 					color: $gray1;
-					font: 400 13px/30px $font;
-					display: block;
+					font: 400 13px $font;
+					display: table;
 					border: 0;
-					margin: 0 -41px;
-					padding: 0 70px;
-					height: 30px;
+					padding: 7px 21px;
+					text-decoration: none;
 					&:hover {
-						background: $white1;
+						color: $red1;
+						text-decoration: none;
 					}
 				}
 			}
+		}
+
+		&__hr {
+			background: $gray6;
+			height: 1px;
+			margin: 5px 40px 5px 70px;
 		}
 
 	}
@@ -975,14 +1118,18 @@ $footerHeight: 242px;
 				color: $white;
 				font: 900 12px $font;
 				align-items: center;
+				text-decoration: none;
 				&-text {
 					display: inline-block;
 					vertical-align: middle;
 					text-transform: uppercase;
 					padding-left: 10px;
+					text-decoration: none;
 				}
 				&:hover {
 					opacity: .6;
+					color: $white;
+					text-decoration: none;
 				}
 			}
 			&-box {
@@ -1032,6 +1179,36 @@ $footerHeight: 242px;
 				max-width: 100%;
 			}
 		}
+	}
+
+	&-buble {
+		background-size: cover;
+		background-repeat: no-repeat;
+		height: 130px;
+		padding: 22px 28px;
+		display: block;
+		color: $white;
+		font: 700 16px $font;
+		border: 0;
+		text-decoration: none;
+		&--bottom {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+		&--top {
+			margin-top: -1px;
+		}
+		&:hover {
+			opacity: .8;
+			text-decoration: none;
+			color: $white;
+		}
+		&__text {
+			display: block;
+		}
+
 	}
 
 }
@@ -1133,7 +1310,7 @@ $footerHeight: 242px;
 			text-transform: uppercase;
 	    letter-spacing: 2.4px;
 	    margin-bottom: 27px;
-
+			display: block;
 		}
 
 		&__phone {

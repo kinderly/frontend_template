@@ -191,9 +191,11 @@ select {
 		display: inline-block;
 		line-height: normal;
 		text-align: center;
+		text-decoration: none;
 		&:hover,
 		&.active {
 			transition: all .3s;
+			text-decoration: none;
 		}
 		&:focus {
 			
@@ -245,6 +247,17 @@ select {
 				color: $gray1;
 			}
 		}
+		&--gray3 {
+			background: $white1;
+			color: $gray1;
+			fill: $gray1;
+			font-weight: 400;
+			&:hover {
+				color: $white;
+				fill: $white;
+				background: $gray3;
+			}
+		}
 		&--white {
 			background: $white;
 			color: $gray1;
@@ -282,6 +295,16 @@ select {
 				border-color: $red1;
 				color: $red1;
 				fill: $red1;
+			}
+		}
+		&--default {
+			border: 0;
+			padding: 10px;
+			color: $dark1;
+			background: none;
+			font: 400 13px $font;
+			&:hover {
+				color: $red1;
 			}
 		}
 	}
@@ -592,6 +615,7 @@ select {
 	line-height: 46px;
 	position: relative;
 	display: flex;
+	text-decoration: none;
 	
 	.ico {
 		font-size: inherit;
@@ -603,6 +627,7 @@ select {
 		border-color: transparent;
 		background: $green1;
 		color: $white;
+		text-decoration: none;
 	}
 	&-inner {
 		display: inline-block;
@@ -645,3 +670,9 @@ table {
 	}
 }
 /* Finish style for table */
+
+%hidden-text {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
