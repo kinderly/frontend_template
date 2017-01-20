@@ -91,9 +91,9 @@ b {
 }
 
 a {	
-	color: #ff5454;
+	color: $gray1;
 	text-decoration: none;
-	border-bottom: 1px solid #ff5454;
+	text-decoration: underline;
 	transition: all .3s;
 	&.button {
 		text-decoration: none;
@@ -103,9 +103,10 @@ a {
 	}
 }
 a:hover {
-	text-decoration: none; 
-	border-color: transparent;
+	text-decoration: underline;
+	color: $red1;
 	transition: all .3s;
+	border-color: transparent;
 }
 a:active {}
 a:visited {}
@@ -164,12 +165,19 @@ img[align="right"] {
 %title-border {
 	position: relative;
 	padding-bottom: 17px;
-	display: block;
+	display: table;
+	margin: 0 auto;
+	color: $gray1;
+	text-decoration: none;
 	&:before {
 		@include before-img(100px,1px);
   	left: 0;
   	bottom: 0;
   	background: $gray1;
+  	transition: all .3s;
+	}
+	&:hover {
+		text-decoration: none;
 	}
 	@include b(tablet) {
 		padding-bottom: 5px;
@@ -181,6 +189,17 @@ img[align="right"] {
 		@extend %ul;
 	}
 	
+}
+
+.title-border-link {
+	border: 0;
+	&:hover {
+		color: $red1;
+		
+		&:before {
+			background: $red1;
+		}
+	}
 }
 
 .default-list {
@@ -214,10 +233,35 @@ ol {
 .banner-line {
 	width: 100px;
 	height: 1px;
-	margin: 27px auto 17px;
+	margin: 28px auto 17px;
 	background: $gray8;
 	@include b(tablet) {
 		margin: 0 auto 13px;
+	}
+	&--text {
+		height: auto;
+		background: none;
+		width: auto;
+		display: table;
+		padding: 0 75px;
+		position: relative;
+		&:before, &:after {
+			@include before-img(60px,1px);
+			background: $gray8;
+			top: 12px;
+		}
+		&:before {
+			left: 0;
+		}
+		&:after {
+			right: 0;
+		}
+	}
+	&__text {
+		color: $white;
+		font: 900 14px $font;
+		background: $red1;
+    padding: 6px 9px 8px;
 	}
 }
 
@@ -233,4 +277,13 @@ ol {
 
 .right {
 	float: right;
+}
+
+.title-red-link {
+	border: 0;
+	text-decoration: none;
+	&:hover {
+		color: $red1;
+		text-decoration: none;
+	}
 }

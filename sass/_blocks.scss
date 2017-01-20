@@ -3,6 +3,9 @@
 
 	&__list {
 		margin: 0 -15px;
+		display: inline-block;
+		vertical-align: middle;
+		border-right: 1px solid $gray2;
 	}
 
 	&__item {
@@ -38,14 +41,62 @@
 		border-bottom: 0;
 		transition: all .3s;
 		display: block;
+		text-decoration: none;
 		&:hover {
 			transition: all .3s;
 			color: $gray1;
+			text-decoration: none;
 		}
 		&--active {
 			&:hover {
 				color: $gray3;
 			}
+		}
+	}
+
+	.related-category {
+		display: inline-block;
+		float: none;
+		vertical-align: middle;
+		border: 0;
+		position: relative;
+		border: 1px solid transparent;
+		margin: -12px 0 -11px 11px;
+		padding: 11px 0 0px;
+		height: 42px;
+		text-decoration: none;
+		&:before {
+			@include before-img(100%, 1px);
+			background: $white;
+			bottom: 0;
+			left: 0;
+			z-index: 202;
+			opacity: 0;
+			visibility: hidden;
+	    transition: all .3s;
+		}
+		&.active {
+			border: 1px solid $gray2;
+			border-bottom: 1px solid transparent;
+			.related-category__open {
+				fill: $gray1;
+			}
+			&:before {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+		&__open {
+			fill: $gray4;
+			&:hover {
+				fill: $gray1;
+			}
+		}
+		&__drop {
+			width: 200px;
+			margin-top: -1px;
+			left: -1px;
+	    padding: 13px 18px;
 		}
 	}
 
@@ -72,7 +123,8 @@
 		text-decoration: none;
 		vertical-align: baseline;
 		&:hover {
-			color: $black;
+			color: $red1;
+			text-decoration: none;
 		}
 	}
 
@@ -132,6 +184,7 @@
 		text-decoration: none;
 		&:hover {
 			opacity: .6;
+			text-decoration: none;
 		}
 	}	
 
@@ -147,8 +200,10 @@
 		display: table;
 		margin-bottom: 4px;
 		border: 0;
+		text-decoration: none;
 		&:hover {
 			color: $black;
+			text-decoration: none;
 		}
 	}
 
@@ -323,8 +378,10 @@
 			color: $gray1;
 			font: 400 14px $font;
 			border: 0;
+			text-decoration: none;
 			&:hover {
-				color: $black;
+				color: $red1;
+				text-decoration: none;
 			}
 		}
 
@@ -466,6 +523,7 @@
 		text-transform: uppercase;
     letter-spacing: 2.4px;
     margin-bottom: 27px;
+    display: block;
 	}
 
 	&__list {
@@ -493,6 +551,7 @@
 			&:hover {
 				background: $green1;
 				fill: $white;
+				text-decoration: none;
 			}
 		}
 
@@ -536,8 +595,10 @@
 		font: 400 13px $font;
 		display: inline-block;
 		border: 0;
+		text-decoration: none;
 		&:hover {
 			color: $gray1;
+			text-decoration: none;
 		}
 	}
 
@@ -699,7 +760,7 @@
 		display: table;
 		margin: 0 auto;
 		position: absolute;
-		top: 53%;
+		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		width: 100%;
@@ -710,6 +771,9 @@
 			display: block;
 			padding-top: 43px;
 		}
+		.banner-line {
+			margin: 32px auto 38px;
+		}
 	}
 
 	&__title {
@@ -717,7 +781,9 @@
 		font: 700 40px/40px $font;
 		text-align: center;
 		display: block;
-		padding-bottom: 31px;
+		padding-bottom: 29px;
+		display: table;
+		margin: 0 auto;
 		@include b(tablet) {
 			font-size: 18px;
 			line-height: 25px;
@@ -733,6 +799,8 @@
 			display: none;
 		}
 
+		
+
 		&-item {
 			display: inline-block;
 			padding: 0 8px;
@@ -741,21 +809,42 @@
 		&-link {
 			color: $dark1;
 			font: 400 13px $font;
-			text-decoration: none;
 			border: 0;
 			text-decoration: none;
 			&:hover {
-				color: $green1;
+				color: $red1;
+				text-decoration: none;
 			}
 		}
 
 	}
 
+	.banner-line {
+		margin: 32px auto 38px;
+	}
+
+	&__about {
+		text-align: center;
+		& > * {
+			margin-right: 40px;
+			&:last-child {
+				margin-right: 0;
+			}
+			@include b(500) {
+				margin: 0;
+			}
+		}
+	}
+
 	&__time {
 		text-align: center;
-		padding-bottom: 31px;
+		display: inline-block;
+		padding-bottom: 25px;
 		@include b(tablet) {
-			padding-bottom: 16px;
+			padding-bottom: 10px;
+		}
+		@include b(500) {
+			display: block;
 		}
 
 		&-ico {
@@ -774,9 +863,20 @@
 
 	}
 
+	&__code {
+		@extend .action-banner__time;
+		&-ico {
+			@extend .action-banner__time-ico;
+		}
+		&-text {
+			@extend .action-banner__time-text;
+		}
+	}
+
 	&__link {
 		display: table;
 		margin: 0 auto;
+
 		@include b(tablet) {
 			max-width: 280px;
 			display: block;
@@ -832,6 +932,47 @@
 		}
 	}
 
+	&__main {
+		transition: all .3s;
+		&.hidden {
+			opacity: 0;
+			visibility: hidden;
+			transition: all .3s;
+		}
+	}
+
+	&-drop {
+		max-width: 450px;
+		margin: 0 auto;
+		position: absolute;
+		transition: all .3s;
+		left: -100%;
+		opacity: 0;
+		bottom: 0;
+		right: 0;
+		top: 0;
+		margin: auto;
+		display: table;
+		visibility: hidden;
+		&.active {
+			left: 0;
+			opacity: 1;
+			visibility: visible;
+		}
+    
+		&__text {
+			@extend .main-banner-drop__text;
+		}
+		&__promo {
+			@extend .main-banner-drop__promo;
+		}
+		&__close {
+			text-align: center;
+			display: table;
+			margin: 0 auto;
+		}
+	}
+
 }
 /* Finsih action banner block */
 
@@ -849,19 +990,21 @@
 		@include clearfix;
 		margin-bottom: 50px;
 		background: $white;
-		&:before {
-			@include before-img(98%,430px);
-			top: 10px;
-			left: 1%;
-			border: 2px solid $gray6;
-			z-index: 2;
-		}
+		
 		&:nth-child(2n) {
 			.action-current__list-left {
 				float: right;
 			}
 			.action-current__list-right {
 				float: left;
+			}
+			.action-banner-drop {
+				left: 0;
+				right: -100%;
+				&.active {
+					left: 0;
+					right: 0;
+				}
 			}
 		}
 		&:last-child {
@@ -914,8 +1057,34 @@
 		float: left;
 		height: 450px;
 		overflow: hidden;
+		a {
+			display: block;
+			overflow: hidden;
+			border: 0;
+			text-decoration: none;
+			&:before {
+				@include before-img(98%,430px);
+				top: 10px;
+				left: 1%;
+				border: 2px solid $gray6;
+				z-index: 2;
+			}
+			&:hover {
+				text-decoration: none;
+				img {
+					transform: scale(1.1);
+				}
+			}
+			@include b(tablet) {
+				&:before {
+					display: none;
+				}
+			}
+		}
 		img {
 			display: block;
+			position: relative;
+			transition: all .3s;
 			@include b(tablet) {
 				width: 100%;
 			}
@@ -1128,6 +1297,11 @@
 			width: 10px;
 			height: 10px;
 			background: $gray2;
+			text-decoration: none;
+			&:hover {
+				text-decoration: none;
+				color: transparent;
+			}
 		}
 		.slick-active {
 			button {
@@ -1315,9 +1489,10 @@
 	&__list {
 		.slick-dots {
 			position: absolute;
-			bottom: 50px;
+			bottom: 40px;
 			right: 25%;
 			line-height: 0;
+			transform: translateX(50%);
 			li {
 				display: inline-block;
 				vertical-align: top;
@@ -1333,6 +1508,11 @@
 				width: 10px;
 				height: 10px;
 				background: $gray2;
+				text-decoration: none;
+				&:hover {
+					text-decoration: none;
+					color: transparent;
+				}
 			}
 			.slick-active {
 				button {
@@ -1353,22 +1533,18 @@
 	&__container {
 		@include b(tablet) {
 			display: block;
-			position: absolute;
+			position: relative;
 			z-index: 9999;
 			background: #fff;
 			width: 100%;
 			left: 0;
-			top: 100%;
+			top: 50px;
 			margin: 0;
-			visibility: hidden;
-			z-index: -1;
-			opacity: 0;
-			height: 100vh;
-   		overflow-y: scroll;
+			display: none;
+			// box-shadow: 0px 3px 13px -5px rgba(0,0,0,0.75);
 			&.active {
 				z-index: 199;
-				visibility: visible;
-				opacity: 1;
+				display: block;
 			}
 		}
 	}
@@ -1383,6 +1559,7 @@
 			width: 40px;
 			height: 20px;
 			display: none;
+			text-decoration: none;
 			&-ico {
 				fill: inherit;
 				display: block;
@@ -1395,6 +1572,7 @@
 			}
 			&:hover {
 				fill: $red1;
+				text-decoration: none;
 			}
 			@include b(tablet) {
 				display: block;
@@ -1405,101 +1583,194 @@
 
 	&-select {
 		font-size: 0;
-		border-top: 1px solid $gray2;	
 		margin-top: 9px;
 		position: relative;
+		padding: 0 30px;
 		&:before {
-			@include before-img(100%,1px);
-			background: $gray2;
-			bottom: 0px;
+
+		}
+
+		@include b(tablet) {
+			margin: 0 -30px;
 		}
 		
-
 		&__list {
 
 			&-item {
 				display: inline-block;
 				vertical-align: top;
-				width: 200px;
 				border: 0;
-				border-right: 1px solid $gray2;
 				position: relative;
-				border-bottom: 1px solid $gray2;
+				margin-right: 10px;
+				margin-bottom: 10px;
+				text-decoration: none;
 				@include b(tablet) {
-					
+					margin: 0;
 				}
 				@include b(tablet) {
 					display: block;
 					width: 100%;
 					border-bottom: 1px solid $gray2;
-					&:last-child {
-						border: 0;
+					&:first-child {
+						border-top: 1px solid $gray2;
+					}
+				}
+				&--selected {
+					.filters-select__list-link {
+						background: $gray2;
+						padding-right: 22px;
+					}
+					.default-select__ico {
+						display: none;
+					}
+					.filters-select__list-reset {
+						display: inline-block;
+					}
+					@include b(tablet) {
+						.filters-select__list-link {
+							background: none;
+							padding-right: 40px;
+						}
 					}
 				}
 				&.active {
 					transition: all .3s;
 					.default-select__ico {
 						transform: rotate(180deg);
-
 					}
 					.filters-select__list-link {
-						background: $gray2;
+						background: $white;
+						border-color: $gray2;
+						border-bottom-color: transparent;
+						&:before {
+							visibility: visible;
+							opacity: 1;
+						}
+						&:after {
+							visibility: visible;
+							opacity: 1;
+						}
 					}
 				}
-				&.ico-hidden {
-					transition: all .3s;
-					.filters-select__list-link {
-						background: $gray2;
-					}
-					.default-select__ico {
-						visibility: hidden;
-						opacity: 0;
-						z-index: -10;
-					}
-				}
+				
 			}
 
 			&-link {
 				color: $gray1;
-				font: 400 14px/50px $font;
+				font: 400 14px/40px $font;
 				display: block;
-				border: 0;
-				height: 50px;
-				padding: 0 41px 0 30px;
+				height: 40px;
+				padding: 0 56px 0 22px;
+				display: inline-block;
+				vertical-align: top;
+				position: relative;
+				background: $white1;
+				border: 1px solid transparent;
+				text-decoration: none;
+				&:before {
+					@include before-img(100%, 15px);
+					background: $white;
+					bottom: -15px;
+					left: 0;
+					opacity: 0;
+					visibility: hidden;
+					z-index: 202;
+					transition: all .3s;
+				}
+				&:after {
+					@include before-img(1px, 49px);
+					background: $gray2;
+					top: 0px;
+					right: -1px;
+					z-index: 202;
+					opacity: 0;
+					visibility: hidden;
+					transition: all .3s;
+				}
+				&:hover {
+					background: $gray4;
+					text-decoration: none;
+					color: inherit;
+				}
+				&.link-pos-right {
+					&:after {
+						right: auto;
+						left: -1px;
+					}
+				}
+				@include b(tablet) {
+					overflow: hidden;
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					display: block;
+					border: 0;
+					background: $white;
+					height: 50px;
+					line-height: 50px;
+					padding-right: 40px;
+					&:before, &:after {
+						display: none;
+					}
+					&:hover {
+						background: $white;
+						color: $red1;
+					}
+				}
 			}
 
 			&-reset {
-				position: absolute;
-				z-index: 2;
+				display: inline-block;
+				vertical-align: top;
 				fill: $gray1;
-				top: calc(50% - 6px);
-				right: 20px;
 				border: 0;
-				visibility: hidden;
-				opacity: 0;
-				z-index: -10;
+				height: 40px;
+				width: 40px;
+				position: relative;
+				background: $gray2;
+				margin-left: 2px;
+				display: none;
+				text-decoration: none;
 				&-ico {
 					width: 12px;
 					height: 12px;
 					display: block;
 					fill: inherit;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					margin: auto;
 				}
-				&.active {
-					visibility: visible;
-					opacity: 1;
-					z-index: 1;
+				&:hover {
+					background: $gray4;
+					text-decoration: none;
 				}
+
 				@include b(tablet) {
-					top: 19px;
+					position: absolute;
+					right: 0;
+					top: 0;
+					background: none;
+					height: 50px;
+					&:hover {
+						background: none;
+						fill: $red1;
+						
+					}
 				}
+				
 			}
 
 			.default-select__ico {
 				z-index: 1;
 				opacity: 1;
 				visibility: visible;
+				right: 16px;
+		    top: calc(50% - 2.5px);
+				fill: $gray3;
 				@include b(tablet) {
-					top: 22px;
+					
 				}
 			}
 
@@ -1509,29 +1780,43 @@
 			position: absolute;
 			top: 100%;
 			left: 0;
-			min-width: 452px;
+			min-width: 320px;
+			width: 100%;
 			background: $white;
-			border: 1px solid $gray6;
-			padding: 0 30px 0;
+			border: 1px solid $gray2;
+			padding: 0 20px 0;
 			visibility: hidden;
 			opacity: 0;
 			transition: all .3s;
 			z-index: -10;
+			margin-top: 10px;
+
+			&:before {
+				@include before-img(1px, 100%);
+				top: -20px;
+				left: -1px;
+				background: $gray2;
+			}
 			&.active {
 				visibility: visible;
-				z-index: 990;
+				z-index: 190;
 				opacity:1;
 				transition: all .3s;
 			}
 			&.position-right {
 				right: 0;
 				left: auto;
+				&:before {
+					left: auto;
+					right: -1px;
+				}
 			}
 			@include b(tablet) {
 				border: 0;
 				transition: none;
-				background: $white1;
 				min-width: 100%;
+				margin: 0;
+				border-top: 1px solid $gray2;
 				&.active {
 					width: 100%;
 					position: static;
@@ -1598,7 +1883,7 @@
 				fill: $gray4;
 				display: block;
 				position: relative;
-				top: -4px;
+				top: -3px;
 			}
 
 			&-link {
@@ -1607,6 +1892,8 @@
 				border: 0;
 				text-decoration: none;
 				&:hover {
+					text-decoration: none;
+					color: $gray1;
 					.filters-nav__list-text {
 						color: $black;
 					}
@@ -1628,19 +1915,15 @@
 		line-height: 1;
 
 		&__cont {
-			padding: 32px 0;
-			margin: 0 -15px;
+			padding: 32px 0 28px;
 			position: relative;
-			max-height: 300px;
-			overflow-y: scroll;
-			&:before {
-				@include before-img(calc(100% - 30px), 1px);
-				bottom: 0;
-				background: $gray6;
-				left: 15px;
-			}
+			max-height: 490px;
+			overflow-y: auto;
+			margin-right: -20px;
+			padding-right: 20px;
 			@include b(tablet) {
 				padding: 20px 0;
+				margin: 0;
 				&:before {
 					display: none;
 				}
@@ -1654,8 +1937,20 @@
 			padding: 0 15px;
 		}
 
+		&__item {
+			border-bottom: 1px solid $gray6;
+			padding: 17px 0 22px;
+			&:first-child {
+				padding-top: 0;
+			}
+			&:last-child {
+				border: 0;
+				padding-bottom: 0;
+			}
+		}
+
 		&__row {
-			padding: 8px 0;
+			padding: 5px 0;
 			&:first-child {
 				padding-top: 0;
 			}
@@ -1666,7 +1961,14 @@
 
 		&__label {
 			color: $gray1;
-			font: 400 14px/1 $font;
+			font: 400 14px/20px $font;
+			padding-left: 30px;
+			&:before {
+				top: 0;
+			}
+			&:after {
+				top: 5px;
+			}
 			span {
 				color: $gray3;
 			}
@@ -1679,8 +1981,8 @@
 		}
 
 		&__bottom {
-			@include clearfix;
 			padding: 18px 0 19px;
+			border-top: 1px solid $gray6;
 			@include b(tablet) {
 				padding-bottom: 35px;
 			}
@@ -1709,11 +2011,10 @@
 		}
 
 		&__submit {
-			float: right;
-			width: 180px;
+			width: 100%;
+	    padding: 9px 20px 11px;
 			@include b(tablet) {
-				float: none;
-				width: 100%;
+				
 			}
 		}
 
@@ -1726,7 +2027,7 @@
 		}
 
 		&__body {
-			padding: 24px 0;
+			padding: 1px 0;
 		}
 
 		&--size {
@@ -1765,9 +2066,11 @@
 		border: 0;
 		padding: 0 15px;
 		display: block;
+		text-decoration: none;
 		&:hover {
 			color: $gray3;
 			fill: $gray3;
+			text-decoration: none;
 		}
 	}
 
@@ -1786,6 +2089,11 @@
 		font: 400 13px $font;
 		fill: $gray1;
 		border: 0;
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+			color: $gray1;
+		}
 	}
 	&-ico {
 		@extend .pagination__list-ico;
@@ -1801,7 +2109,7 @@
 
 /* Start product lsit */
 .product__list {
-	margin: 0 -25px;
+	margin: 0 -30px;
 	display: flex;
 	flex-wrap: wrap;
 	@include b(1400) {
@@ -1815,10 +2123,11 @@
 		display: inline-block;
 		vertical-align: top;
 		width: 20%;
-		padding: 29px 0 19px 25px;
+		padding: 29px 0 19px 0px;
 		text-align: left;
 		@include clearfix;
 		position: relative;
+		max-height: 620px;
 		&:nth-child(5n) {
 			//z-index: 100;
 			&:before {
@@ -1826,7 +2135,7 @@
 				left: -2500px;
 				bottom: 0;
 				background: $gray2;
-				z-index: 9999;
+				z-index: 9;
 			}
 		}
 		&:last-child {
@@ -1836,7 +2145,7 @@
 				left: -2500px;
 				bottom: 0;
 				background: $gray2;
-				z-index: 9999;
+				z-index: 9;
 			}
 		}
 		&:hover {
@@ -1845,17 +2154,14 @@
 			.product__list-box {
 				background: $white;
 				border: 1px solid $gray4;
-			}
-			.product__list-show {
-				display: block;
+				z-index: 999;
+				max-height: none;
+				overflow: visible;
 			}
 			.product__list-size {
 				visibility: visible;
 				z-index: 1;
 				opacity: 1;
-			}
-			.product__list-left {
-				display: block;
 			}
 		}
 		&--note {
@@ -1863,35 +2169,6 @@
 				.product-note {
 					border: 1px solid $gray4;
 				}
-			}
-		}
-		&--right {
-			.product__list-box {
-				left: 0;
-				right: auto;
-				float: left;
-				padding: 30px 0 0 25px;
-			}
-			.product__list-right {
-				float: left;
-				padding-left: 0;
-				padding-right: 10px;
-				@include b(tablet) {
-					padding-right: 0;
-				}
-			}
-			.product__list-left {
-				right: 25px;
-				@include b(1400) {
-					right: 15px;
-				}
-			}
-			.product__list-sticker {
-				left: 25px;
-				right: auto;
-			}
-			@include b(mobile) {
-
 			}
 		}
 		@include b(1400) {
@@ -1978,6 +2255,7 @@
 				border-bottom: 0;
 			}
 			&:hover {
+				z-index: 1;
 				.product__list-box {
 					background: $white;
 					border: 0;
@@ -1991,9 +2269,6 @@
 					z-index: 1;
 					opacity: 1;
 				}
-				.product__list-left {
-					display: none;
-				}
 			}
 			&--note {
 				display: none;
@@ -2002,58 +2277,6 @@
 		@include b(400) {
 			padding-left: 20px;
 			padding-right: 20px;
-		}
-	}
-
-	.product-slider {
-		&__item {
-			padding-bottom: 20px;
-			&:last-child {
-				padding-bottom: 0;
-			}
-		}
-		&__link {
-			border: 0;
-			display: block;
-			&:hover {
-				opacity: .8;
-			}
-		}
-		&__img {
-			max-width: 100%;
-			display: block;
-			margin: 0 auto;
-		}
-	}
-
-	&-show {
-		width: 200px;
-		margin: 0 auto;
-		position: absolute;
-		bottom: 30px;
-		margin: 0 auto;
-		left: calc(50% - 100px);
-		display: none;
-		@include b(1600) {
-			width: 100%;
-			left: 0;
-		}
-		@include b(1400) {
-			bottom: 10px;
-		}
-	}
-
-	&-left {
-		position: absolute;
-		width: 120px;
-		display: none;
-		padding-left: 25px;
-		@include b(1400) {
-			width: 85px;
-			padding-left: 15px;
-		}
-		@include b(tablet) {
-			display: none;
 		}
 	}
 
@@ -2072,16 +2295,15 @@
 	}
 	
 	&-box {
-		padding: 0 25px 0 0;
-		width: calc(100% + 120px);
-		float: right;
+		padding: 0 15px;
 		border: 1px solid transparent;
-		padding-top: 30px;
+		padding-top: 20px;
 		@include clearfix;
 		position: relative;
-		height: 100%;
+		max-height: 590px;
+		overflow: hidden;
 		@include b(1400) {
-			width: calc(100% + 85px);
+			
 		}
 		@include b(tablet) {
 			position: static;
@@ -2095,14 +2317,20 @@
 	&-image {
 		overflow: hidden;
 		position: relative;
-		margin-bottom: 27px;
+		margin-bottom: 14px;
 		&-box {
-			display: flex;
-			align-items: center;
-			height: 427px;
+			height: 410px;
 			a {
 				border: 0;
 				margin: 0 auto;
+				max-height: 100%;
+				height: 100%;
+				display: flex;
+				align-items: center;
+				text-decoration: none;
+				&:hover {
+					text-decoration: none;
+				}
 			}
 			@include b(1600) {
 				height: 300px;
@@ -2140,6 +2368,7 @@
 		display: block;
 		margin: 0 auto;
 		max-width: 100%;
+		max-height: 100%;
 	}
 
 	&-title {
@@ -2147,13 +2376,16 @@
 		font: 400 15px $font;
 		display: table;
 		border: 0;
-		margin-bottom: 1px;
+		margin-bottom: 11px;
 		height: 18px;
 		white-space: nowrap;
 		appearance: none;
 		overflow: hidden;
+		font-weight: 700;
+		text-decoration: none;
 		&:hover {
 			color: $black;
+			text-decoration: none;
 		}
 		@include b(tablet) {
 			margin-bottom: 11px;
@@ -2167,7 +2399,7 @@
 		font: 400 13px/20px $font;
 		padding: 0;
 		height: 40px;
-		margin-bottom: 18px;
+		margin-bottom: 21px;
 		overflow: hidden;
 		appearance: none;
 		@include b(tablet) {
@@ -2177,8 +2409,11 @@
 	}
 
 	&-bottom {
-		padding-bottom: 23px;
+		padding-bottom: 35px;
 		line-height: 1;
+		@include b(tablet) {
+			padding-bottom: 24px;
+		}
 	}
 
 	&-price {
@@ -2205,7 +2440,7 @@
 		border-radius: 50%;
 		background: $green1;
 		top: 30px;
-    right: 25px;
+    right: 15px;
 		&-item {
 			color: $white;
 			fill: $white;
@@ -2225,26 +2460,36 @@
 	}
 
 	&-size {
-		margin-bottom: 10px;
-		height: 25px;
+		margin-bottom: 14px;
 		visibility: hidden;
 		overflow: hidden;
+		height: 57px;
 		z-index: -10;
 		opacity: 0;
+		font-size: 0;
+		padding-left: 3px;
 		&-name {
 			display: inline-block;
-			color: $gray1;
-			font: 400 13px $font;
-			margin-right: 5px;
+			vertical-align: top;
+			width: 18px;
+		}
+		&-box {
+			display: inline-block;
+			vertical-align: top;
+			width: calc(100% - 18px);
+			padding-left: 20px;
+			margin-top: -2px;
 		}
 		&-val {
 			display: inline-block;
-			color: $gray1;
+			color: $gray5;
 			font: 400 13px $font;
 			border: 0;
-			margin-right: 5px;
+			margin: 0 23px 13px 0;
+			text-decoration: none;
 			&:hover {
 				color: $green1;
+				text-decoration: none;
 			}
 			&--disable {
 				color: $gray3;
@@ -2255,7 +2500,6 @@
 		}
 		&-ico {
 			fill: $gray4;
-			display: none;
 		}
 		@include b(tablet) {
 			display: block;
@@ -2266,11 +2510,16 @@
 			.mob-hide {
 				display: none;
 			}
+			&-box {
+				padding-left: 10px;
+				margin-top: -3px;
+			}
 			&-ico {
 				display: inline-block;
 			}
 			&-val {
 				font-size: 12px;
+				margin: 0px 10px 5px 0;
 			}
 		}
 	}
@@ -2373,8 +2622,10 @@
 			font: 400 13px/1 $font;
 			display: block;
 			border: 0;
+			text-decoration: none;
 			&:hover {
 				color: $black;
+				text-decoration: none;
 			}
 			span {
 				color: $gray3;
@@ -2444,15 +2695,18 @@
 	&__close {
 		border: 0;
 		position: absolute;
-		top: 20px;
-		right: 20px;
+		top: 0;
+		right: 0;
+		padding: 20px;
 		fill: $gray1;
+		text-decoration: none;
 		&-ico {
 			display: block;
 			fill: inherit;
 		}
 		&:hover {
 			fill: $red1;
+			text-decoration: none;
 		}
 	}
 
@@ -2468,7 +2722,7 @@
 		display: block;
 		max-width: 640px;
 		.modal__close {
-			top: 15px;
+			padding: 15px;
 		}
 	}
 
@@ -2551,8 +2805,10 @@
 			&-link {
 				border: 0;
 				display: block;
+				text-decoration: none;
 				&:hover {
 					opacity: .8;
+					text-decoration: none;
 				}
 			}
 
@@ -2586,8 +2842,11 @@
 				display: inline-block;
 				padding: 0;
 				border-bottom: 1px solid transparent;
+				text-decoration: none;
 				&:hover {
 					border-color: $gray1;
+					text-decoration: none;
+					color: $gray1;
 				}
 			}
 			&-ico {
@@ -2611,8 +2870,10 @@
 				color: $gray3;
 				font: 400 14px $font;
 				border: 0;
+				text-decoration: none;
 				&:hover {
 					color: $gray1;
+					text-decoration: none;
 				}
 				&:nth-child(1) {
 					float: left;
@@ -2879,8 +3140,10 @@
 			}
 			&-link {
 				border: 0;
+				text-decoration: none;
 				&:hover {
 					opacity: .6;
+					text-decoration: none;
 				}
 			}
 			&-ico {
@@ -3001,6 +3264,11 @@
 					display: inline-block;
 					margin-right: 30px;
 					border: 0;
+					text-decoration: none;
+					&:hover {
+						text-decoration: none;
+						color: $gray1;
+					}
 					&:last-child {
 						margin-right: 0;
 					}
@@ -3257,6 +3525,7 @@
 				fill: $gray4;
 				border: 0;
 				margin-right: 10px;
+				text-decoration: none;
 				&--active {
 					fill: $red1;
 					.modal-childReg__info-ico {
@@ -3266,6 +3535,7 @@
 				}
 				&:hover {
 					fill: $red1;
+					text-decoration: none;
 				}
 				&:last-child {
 					margin-right: 0px;
@@ -3420,6 +3690,10 @@
 				outline: 0;
 				background: none;
 				padding: 0;
+				text-decoration: none;
+				&:hover {
+					text-decoration: none;
+				}
 			}
 		}
 
@@ -3448,8 +3722,10 @@
 				color: $gray1;
 				font: 400 14px $font;
 				border: 0;
+				text-decoration: none;
 				&:hover {
 					color: $black;
+					text-decoration: none;
 				}
 			}
 		}
@@ -3580,9 +3856,11 @@
 		border: 0;
 		fill: $gray1;
 		display: block;
+		text-decoration: none;
 		&:hover {
 			color: $red1;
 			fill: $red1;
+			text-decoration: none;
 		}
 	}
 
@@ -3638,6 +3916,7 @@
 		height: 20px;
 		position: relative;
 		transition: all .3s;
+		text-decoration: none;
 		&-ico {
 			display: block;
 			fill: inherit;
@@ -3647,6 +3926,9 @@
 			left: 0;
 			right: 0;
 			margin: auto;
+		}
+		&:hover {
+			text-decoration: none;
 		}
 	}
 
@@ -3692,12 +3974,14 @@
 			color: $gray1;
 			font: 400 13px/30px $font;
 			border: 0;
-			display: block;
+			display: table;
     	padding: 0 15px 0;
     	height: 30px;
     	margin: 0 -15px;
+    	text-decoration: none;
     	&:hover {
-    		background: $white1;
+				color: $red1;
+				text-decoration: none;
     	}
 		}
 
@@ -3755,6 +4039,7 @@
 		fill: $gray1;
     position: relative;
     top: -2px;
+    text-decoration: none;
 		&-ico {
 			width: 12px;
 			height: 12px;
@@ -3763,6 +4048,7 @@
 		}
 		&:hover {
 			fill: $red1;
+			text-decoration: none;
 		}
 	}
 
@@ -4062,3 +4348,27 @@
 
 }
 /* Finsih shelbik style */
+
+.scrollTop {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 40;
+	cursor: pointer;
+	&__ico {
+		transform: rotate(180deg);
+	}
+	@include b(tablet) {
+		background: $gray1;
+		color: $gray6;
+		width: 100%;
+		left: 0;
+		right: 0;
+		fill: $gray6;
+		&:hover {
+			background: $gray1;
+			color: $gray6;
+			fill: $gray6;
+		}
+	}
+}
